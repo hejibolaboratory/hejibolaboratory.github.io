@@ -24,10 +24,20 @@ version:2022-05-22
 - 5. 如何改变字体大小
 - 6. 标注显著
 - 7. 画图技巧 7. 去掉上方和右侧的边框/spines
+
+---
+# 画图重点与技巧 （您的思考题，下次再来找我继续学习）
 - 8. 如何让y-axis断裂，不从0开始 [todo]
 - 9. 如何设置xlim, ylim,坐标范围？[todo]
 - 10. 如何绘制放在网上的可以交互的图[todo]
 - 11. 如何对大数据（>5g）的数据画图 [todo]
+- 12. Excel, SPSS,代码画图对比[todo]
+- 13. ErrBar 带标准差的柱状图 [todo]
+- 14. 如何去掉legend/图例的边框 [todo]
+- 15. 如何改变xticklabel？[todo]
+- 16. 如何绘制line plot with shaded error [todo]
+- 17. 如何绘制violin plot with bar graph [todo]
+- 18. 如何指定font style [todo]
 
 ---
 # 为什么不用Excel画图？
