@@ -9,8 +9,9 @@ backgroundImage: url(bg-image.png)
 paginate: true
 footer: "Copyright by Jibo He"
 ---
-# Graph with Matplotlib
-## by Jibo He
+# Scientific Graph with Python + Matplotlib
+# 如何使用Python + Matplotlib绘制期刊论文发表标准的图？
+## by Jibo He/何吉波
 清华大学社会科学学院心理学系
 hejibolaboratory@pku.org.cn
 version:2022-05-22
@@ -38,6 +39,7 @@ version:2022-05-22
 - 16. 如何绘制line plot with shaded error [todo]
 - 17. 如何绘制violin plot with bar graph [todo]
 - 18. 如何指定font style [todo]
+- 19. 如何选择正确的图的类型 [todo]
 
 ---
 # 为什么不用Excel画图？
