@@ -8,6 +8,17 @@ marp: true
 hejibolaboratory@pku.org.cn
 
 ---
+# 学习难点
+- 1. 显示中文
+- 2. 标题或者y-label过长，换行显示
+
+---
+# package installation
+
+pip install chineseize-matplotlib
+pip install matplotlib
+
+---
 # Introduction to Matplotlib
 “make easy things easy and hard things possible“
 - create simple plots with just a few commands
@@ -129,6 +140,34 @@ axis set to (3,15,0,2000)
 
 ![width:500px](histogram.png)
 
+---
+# 显示中文
+## chineseize-matplotlib 自动设置 matplotlib 中文字体
+```python
+import matplotlib.pyplot as plt
+import chineseize_matplotlib
+
+plt.plot([1, 2, 3, 4])
+plt.xlabel('简单图表')
+plt.show()
+
+```
+
+https://pypi.org/project/chineseize-matplotlib/
+
+
+---
+# 通过换行显示一个很长的title或者label
+```python
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4])
+#plt.xlabel('I am a loooooooooooooooooooooooong title')
+plt.xlabel('I am a loooooooooooo\noooooooooooong title')
+
+plt.show()
+
+```
 
 ---
 # References for Matplotlib-1
