@@ -13,10 +13,11 @@
 <h1>Graph with Matplotlib</h1>
 <h2>by Jibo He</h2>
 <p>清华大学社会科学学院心理学系<br />
-<a href="mailto:hejibolaboratory@pku.org.cn">hejibolaboratory@pku.org.cn</a></p>
+<a href="mailto:hejibolaboratory@pku.org.cn">hejibolaboratory@pku.org.cn</a><br />
+version:2022-05-22</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2">
-<h1>学习难点</h1>
+<h1>画图重点与技巧</h1>
 <ul>
 <li>
 <ol>
@@ -28,14 +29,53 @@
 <li>标题或者y-label过长，换行显示</li>
 </ol>
 </li>
+<li>
+<ol start="3">
+<li>如何以期刊要求的300DPI保存图片</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>如何改变线条颜色与风格</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>如何改变字体大小</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>标注显著</li>
+</ol>
+</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3">
-<h1>package installation</h1>
-<p>pip install chineseize-matplotlib<br />
-pip install matplotlib</p>
+<h1>为什么不用Excel画图？</h1>
+<ul>
+<li>确保图片是300DPI的清晰度</li>
+<li>为了重用代码，不重复点击操作</li>
+<li>为了确保图片的长宽比一致（aspect ratio）或者高度一致</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4">
+<h1>期刊对图片的要求</h1>
+<h2>以顶刊Accident Analysis and Prevention为例</h2>
+<h3>source: <a href="https://www.elsevier.com/journals/accident-analysis-and-prevention/0001-4575/guide-for-authors">https://www.elsevier.com/journals/accident-analysis-and-prevention/0001-4575/guide-for-authors</a></h3>
+<p>TIFF (or JPG): Color or grayscale photographs (halftones): always use a minimum of 300 dpi.<br />
+TIFF (or JPG): Bitmapped line drawings: use a minimum of 1000 dpi.<br />
+TIFF (or JPG): Combinations bitmapped line/half-tone (color or grayscale): a minimum of 500 dpi is required.<br />
+Please do not:<br />
+• Supply files that are optimized for screen use (e.g., GIF, BMP, PICT, WPG); the resolution is too low.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5">
+<h1>package installation</h1>
+<p>pip install chineseize-matplotlib -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a><br />
+pip install matplotlib -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a><br />
+pip install numpy -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6">
 <h1>Introduction to Matplotlib</h1>
 <p>“make easy things easy and hard things possible“</p>
 <ul>
@@ -51,16 +91,16 @@ pip install matplotlib</p>
 <p>available at (including many examples)<br />
 <a href="http://matplotlib.sourceforge.net/">http://matplotlib.sourceforge.net/</a></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7">
 <h1>The Matplotlib Gallery</h1>
 <h2><a href="http://matplotlib.sourceforge.net/gallery.html">http://matplotlib.sourceforge.net/gallery.html</a></h2>
 <p><img src="matplotlib-gallery.png" alt="" style="width:900px;" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8">
 <h1>Basic 2D - plotting</h1>
 <p><img src="2d-plots.jpeg" alt="" style="width:900px;" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9">
 <h1>Basic 2D - plotting</h1>
 <pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np 	<span class="hljs-comment"># import numpy</span>
 <span class="hljs-keyword">import</span> pylab <span class="hljs-keyword">as</span> pl		<span class="hljs-comment"># import pylab interface</span>
@@ -78,7 +118,7 @@ pl.show()				 <span class="hljs-comment"># show the plot</span>
 
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10">
 <h1>subplots</h1>
 <h2>subplot (2,1,1) :</h2>
 <p>2 columns, 1 row<br />
@@ -86,7 +126,7 @@ choose first subplot<br />
 ! Indexing starts with 1</p>
 <p><img src="subplots.png" alt="" style="width:600px;" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11">
 <h1>subplots</h1>
 <pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np 	<span class="hljs-comment"># import numpy</span>
 <span class="hljs-keyword">import</span> pylab <span class="hljs-keyword">as</span> pl		<span class="hljs-comment"># import pylab interface</span>
@@ -107,7 +147,7 @@ pl.show()
 
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12">
 <h1>Subplots Exercise</h1>
 <p>How to make the figures side by side?</p>
 <h1>Other basic plotting commands</h1>
@@ -117,7 +157,7 @@ pl.show()
 <p>pl.semilogx ()   # x-axis logarithmically scaled</p>
 <p>pl.semilogy ()  # y-axis logarithmically scaled</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13">
 <h1>Histograms</h1>
 <pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np 	<span class="hljs-comment"># import numpy</span>
 <span class="hljs-keyword">import</span> pylab <span class="hljs-keyword">as</span> pl		<span class="hljs-comment"># import pylab interface</span>
@@ -138,15 +178,40 @@ pl.show()
 
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14">
 <h1>Histograms</h1>
 <p>(automatic) histogram with 100 bins</p>
 <p>histogram for data between 3. and 25. with binsize 0.1<br />
 axis set to (3,15,0,2000)</p>
 <p><img src="histogram.png" alt="" style="width:500px;" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13">
-<h1>显示中文</h1>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15">
+<h1>如何绘制柱状图bar graph</h1>
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+
+<span class="hljs-comment"># creating the dataset</span>
+data = {<span class="hljs-string">&#x27;C&#x27;</span>:<span class="hljs-number">20</span>, <span class="hljs-string">&#x27;C++&#x27;</span>:<span class="hljs-number">15</span>, <span class="hljs-string">&#x27;Java&#x27;</span>:<span class="hljs-number">30</span>,
+		<span class="hljs-string">&#x27;Python&#x27;</span>:<span class="hljs-number">35</span>}
+courses = <span class="hljs-built_in">list</span>(data.keys())
+values = <span class="hljs-built_in">list</span>(data.values())
+
+fig = plt.figure(figsize = (<span class="hljs-number">10</span>, <span class="hljs-number">5</span>))
+
+<span class="hljs-comment"># creating the bar plot</span>
+plt.bar(courses, values, color =<span class="hljs-string">&#x27;maroon&#x27;</span>,
+		width = <span class="hljs-number">0.4</span>)
+
+plt.xlabel(<span class="hljs-string">&quot;Courses offered&quot;</span>)
+plt.ylabel(<span class="hljs-string">&quot;No. of students enrolled&quot;</span>)
+plt.title(<span class="hljs-string">&quot;Students enrolled in different courses&quot;</span>)
+plt.show()
+
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16">
+<h1>画图技巧 1. 显示中文</h1>
 <h2>chineseize-matplotlib 自动设置 matplotlib 中文字体</h2>
 <pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
 <span class="hljs-keyword">import</span> chineseize_matplotlib
@@ -158,8 +223,8 @@ plt.show()
 </span></span></foreignObject></svg></code></pre>
 <p><a href="https://pypi.org/project/chineseize-matplotlib/">https://pypi.org/project/chineseize-matplotlib/</a></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14">
-<h1>通过换行显示一个很长的title或者label</h1>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17">
+<h1>画图技巧 2.通过换行显示一个很长的title或者label</h1>
 <pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
 
 plt.plot([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>])
@@ -170,19 +235,151 @@ plt.show()
 
 </span></span></foreignObject></svg></code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18">
+<h1>画图技巧 3.如何以期刊要求的300DPI保存图片</h1>
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np 	<span class="hljs-comment"># import numpy</span>
+<span class="hljs-keyword">import</span> pylab <span class="hljs-keyword">as</span> pl		<span class="hljs-comment"># import pylab interface</span>
+fig = pl.figure()
+times = np.arange ( <span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">0.01</span> ) 	<span class="hljs-comment"># define x-vector</span>
+fun  = <span class="hljs-keyword">lambda</span> x : np.cos (<span class="hljs-number">20</span> *x) * np.exp (- pl.absolute(x) )
+		<span class="hljs-comment"># define some function fun (x)</span>
+pl.plot ( times, fun(times) ) 	<span class="hljs-comment"># plot fun (t) vs. t</span>
+pl.xlabel (<span class="hljs-string">&#x27;time&#x27;</span> ) 		<span class="hljs-comment"># creating x-label</span>
+pl.ylabel (<span class="hljs-string">&#x27;position&#x27;</span>)		<span class="hljs-comment"># creating y-label</span>
+pl.title ( <span class="hljs-string">&#x27;damped oscillation&#x27;</span>) 	<span class="hljs-comment"># setting the title</span>
+
+fig.set_size_inches(<span class="hljs-number">30.</span>,<span class="hljs-number">18.</span>)
+<span class="hljs-comment">## ensuare the figure is saved in 300 dpi, high resolution enough for publication purposes.</span>
+pl.savefig(<span class="hljs-string">&#x27;/Users/ucdlab/Desktop/Course /Python - 大数据 /清华Python 2022/Graph-matpotlib/300dpi.png&#x27;</span>, dpi=<span class="hljs-number">300</span>)
+pl.show()
+
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19">
+<h1>画图技巧 4. 如何改变线条颜色与风格</h1>
+<h2>支持的线条风格</h2>
+<p>'-'<br />
+'--'<br />
+'-.'<br />
+':'<br />
+'None'<br />
+' '<br />
+''<br />
+'solid'<br />
+'dashed'<br />
+'dashdot'<br />
+'dotted'</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20">
+<h1>画图技巧 4. 如何改变线条颜色与风格</h1>
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+plt.plot([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>],color = <span class="hljs-string">&#x27;black&#x27;</span>,linestyle=<span class="hljs-string">&quot;dashed&quot;</span>)
+
+plt.plot([ <span class="hljs-number">3</span>, <span class="hljs-number">4</span>,<span class="hljs-number">1</span>, <span class="hljs-number">2</span>],color = <span class="hljs-string">&#x27;black&#x27;</span>,linestyle=<span class="hljs-string">&quot;dotted&quot;</span>)
+
+<span class="hljs-comment">#supported  values are &#x27;-&#x27;, &#x27;--&#x27;, &#x27;-.&#x27;, &#x27;:&#x27;, &#x27;None&#x27;, &#x27; &#x27;, &#x27;&#x27;, &#x27;solid&#x27;, &#x27;dashed&#x27;, &#x27;dashdot&#x27;, &#x27;dotted&#x27;</span>
+
+plt.ylabel(<span class="hljs-string">&#x27;I am a ylabel&#x27;</span>)
+plt.xlabel(<span class="hljs-string">&#x27;I am a loooooooooooo\noooooooooooong title&#x27;</span>)
+
+plt.show()
+
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21">
+<h1>画图技巧 5. 如何改变字体大小</h1>
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+LegiableFontSize = <span class="hljs-number">20</span>
+plt.rc(<span class="hljs-string">&#x27;font&#x27;</span>, size=LegiableFontSize) <span class="hljs-comment">#controls default text size</span>
+plt.rc(<span class="hljs-string">&#x27;axes&#x27;</span>, titlesize=LegiableFontSize) <span class="hljs-comment">#fontsize of the title</span>
+plt.rc(<span class="hljs-string">&#x27;axes&#x27;</span>, labelsize=LegiableFontSize) <span class="hljs-comment">#fontsize of the x and y labels</span>
+plt.rc(<span class="hljs-string">&#x27;xtick&#x27;</span>, labelsize=LegiableFontSize) <span class="hljs-comment">#fontsize of the x tick labels</span>
+plt.rc(<span class="hljs-string">&#x27;ytick&#x27;</span>, labelsize=LegiableFontSize) <span class="hljs-comment">#fontsize of the y tick labels</span>
+plt.rc(<span class="hljs-string">&#x27;legend&#x27;</span>, fontsize=LegiableFontSize) <span class="hljs-comment">#fontsize of the legend</span>
+
+plt.plot([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>])
+plt.ylabel(<span class="hljs-string">&#x27;I am a loooooooooooo\noooooooooooong title&#x27;</span>)
+plt.xlabel(<span class="hljs-string">&#x27;I am a loooooooooooo\noooooooooooong title&#x27;</span>)
+
+plt.show()
+
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22">
+<h1>画图技巧 6. 如何标注显著或者其它文字 （部分）</h1>
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">annotation_line</span>(<span class="hljs-params"> ax, xmin, xmax, y, text, ytext=<span class="hljs-number">0</span>, linecolor=<span class="hljs-string">&#x27;black&#x27;</span>, linewidth=<span class="hljs-number">1</span>, fontsize=<span class="hljs-number">12</span> </span>):</span>
+ <span class="hljs-keyword">if</span> ytext==<span class="hljs-number">0</span>:
+        ytext = y + ( ax.get_ylim()[<span class="hljs-number">1</span>] - ax.get_ylim()[<span class="hljs-number">0</span>] ) / <span class="hljs-number">20</span>
+
+    ax.annotate( text, xy=(xcenter,ytext), ha=<span class="hljs-string">&#x27;center&#x27;</span>, va=<span class="hljs-string">&#x27;center&#x27;</span>, fontsize=fontsize)
+    ax.annotate(<span class="hljs-string">&#x27;&#x27;</span>, xy=(xmin, y), xytext=(xmax, y), xycoords=<span class="hljs-string">&#x27;data&#x27;</span>, textcoords=<span class="hljs-string">&#x27;data&#x27;</span>,
+            arrowprops={<span class="hljs-string">&#x27;arrowstyle&#x27;</span>: <span class="hljs-string">&#x27;|-|&#x27;</span>, <span class="hljs-string">&#x27;color&#x27;</span>:linecolor, <span class="hljs-string">&#x27;linewidth&#x27;</span>:linewidth})
+    ax.annotate(<span class="hljs-string">&#x27;&#x27;</span>, xy=(xmin, y), xytext=(xmax, y), xycoords=<span class="hljs-string">&#x27;data&#x27;</span>, textcoords=<span class="hljs-string">&#x27;data&#x27;</span>,
+            arrowprops={<span class="hljs-string">&#x27;arrowstyle&#x27;</span>: <span class="hljs-string">&#x27;&lt;-&gt;&#x27;</span>, <span class="hljs-string">&#x27;color&#x27;</span>:linecolor, <span class="hljs-string">&#x27;linewidth&#x27;</span>:linewidth})
+
+    xcenter = xmin + (xmax-xmin)/<span class="hljs-number">2</span>
+</span></span></foreignObject></svg></code></pre>
+<p>References: <a href="https://stackoverflow.com/questions/38677467/how-to-annotate-a-range-of-the-x-axis-in-matplotlib">https://stackoverflow.com/questions/38677467/how-to-annotate-a-range-of-the-x-axis-in-matplotlib</a></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23">
+<h1>画图技巧 6. 如何标注显著或者其它文字</h1>
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">annotation_line</span>(<span class="hljs-params"> ax, xmin, xmax, y, text, ytext=<span class="hljs-number">0</span>, linecolor=<span class="hljs-string">&#x27;black&#x27;</span>, linewidth=<span class="hljs-number">1</span>, fontsize=<span class="hljs-number">12</span> </span>):</span>
+ <span class="hljs-keyword">if</span> ytext==<span class="hljs-number">0</span>:
+        ytext = y + ( ax.get_ylim()[<span class="hljs-number">1</span>] - ax.get_ylim()[<span class="hljs-number">0</span>] ) / <span class="hljs-number">20</span>
+
+    ax.annotate( text, xy=(xcenter,ytext), ha=<span class="hljs-string">&#x27;center&#x27;</span>, va=<span class="hljs-string">&#x27;center&#x27;</span>, fontsize=fontsize)
+    ax.annotate(<span class="hljs-string">&#x27;&#x27;</span>, xy=(xmin, y), xytext=(xmax, y), xycoords=<span class="hljs-string">&#x27;data&#x27;</span>, textcoords=<span class="hljs-string">&#x27;data&#x27;</span>,
+            arrowprops={<span class="hljs-string">&#x27;arrowstyle&#x27;</span>: <span class="hljs-string">&#x27;|-|&#x27;</span>, <span class="hljs-string">&#x27;color&#x27;</span>:linecolor, <span class="hljs-string">&#x27;linewidth&#x27;</span>:linewidth})
+    ax.annotate(<span class="hljs-string">&#x27;&#x27;</span>, xy=(xmin, y), xytext=(xmax, y), xycoords=<span class="hljs-string">&#x27;data&#x27;</span>, textcoords=<span class="hljs-string">&#x27;data&#x27;</span>,
+            arrowprops={<span class="hljs-string">&#x27;arrowstyle&#x27;</span>: <span class="hljs-string">&#x27;&lt;-&gt;&#x27;</span>, <span class="hljs-string">&#x27;color&#x27;</span>:linecolor, <span class="hljs-string">&#x27;linewidth&#x27;</span>:linewidth})
+
+    xcenter = xmin + (xmax-xmin)/<span class="hljs-number">2</span>
+   
+
+<span class="hljs-comment"># creating the dataset</span>
+data = {<span class="hljs-string">&#x27;C&#x27;</span>:<span class="hljs-number">20</span>, <span class="hljs-string">&#x27;C++&#x27;</span>:<span class="hljs-number">15</span>, <span class="hljs-string">&#x27;Java&#x27;</span>:<span class="hljs-number">30</span>,
+		<span class="hljs-string">&#x27;Python&#x27;</span>:<span class="hljs-number">35</span>}
+courses = <span class="hljs-built_in">list</span>(data.keys())
+values = <span class="hljs-built_in">list</span>(data.values())
+
+<span class="hljs-comment">#fig = plt.figure()</span>
+fig, ax = plt.subplots(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,figsize = (<span class="hljs-number">10</span>, <span class="hljs-number">5</span>))
+
+<span class="hljs-comment"># creating the bar plot</span>
+plt.bar(courses, values, color =<span class="hljs-string">&#x27;black&#x27;</span>,
+		width = <span class="hljs-number">0.4</span>)
+
+plt.xlabel(<span class="hljs-string">&quot;Courses offered&quot;</span>)
+plt.ylabel(<span class="hljs-string">&quot;No. of students enrolled&quot;</span>)
+
+annotation_line( ax=ax, text=<span class="hljs-string">&#x27;Significant&#x27;</span>, xmin=<span class="hljs-number">1</span>, xmax=<span class="hljs-number">2</span>, \
+                    y=<span class="hljs-number">33</span>, ytext=<span class="hljs-number">35</span>, linewidth=<span class="hljs-number">2</span>, linecolor=<span class="hljs-string">&#x27;black&#x27;</span>, fontsize=<span class="hljs-number">18</span> )
+
+plt.show()
+
+</span></span></foreignObject></svg></code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24">
 <h1>References for Matplotlib-1</h1>
 <p><img src="matplotlib-reference-manual-1.jpeg" alt="" style="width:500px;" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25">
 <h1>References for Matplotlib-2</h1>
 <p><img src="matplotlib-reference-manual-2.jpeg" alt="" style="width:500px;" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26">
 <h1>References for Matplotlib-3</h1>
 <p><img src="matplotlib-reference-manual-3.jpeg" alt="" style="width:500px;" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27">
 <h1>References for Matplotlib-4</h1>
 <p><img src="matplotlib-reference-manual-4.jpeg" alt="" style="width:500px;" /></p>
 </section>
