@@ -1,5 +1,13 @@
 ---
 marp: true
+size: 16:9
+class:
+  - invert
+  - lead
+color: white
+backgroundImage: url(bg-image.png)
+paginate: true
+footer: "Copyright by Jibo He"
 ---
 # Graph with Matplotlib
 ## by Jibo He
@@ -26,7 +34,7 @@ version:2022-05-22
 # 期刊对图片的要求
 ## 以顶刊Accident Analysis and Prevention为例
 ### source: https://www.elsevier.com/journals/accident-analysis-and-prevention/0001-4575/guide-for-authors
-TIFF (or JPG): Color or grayscale photographs (halftones): always use a minimum of 300 dpi.
+TIFF (or JPG): Color or grayscale photographs (halftones): always use a <span style="color:red;"> minimum of 300 dpi </span>.
 TIFF (or JPG): Bitmapped line drawings: use a minimum of 1000 dpi.
 TIFF (or JPG): Combinations bitmapped line/half-tone (color or grayscale): a minimum of 500 dpi is required.
 Please do not:
@@ -91,6 +99,7 @@ pl.show()				 # show the plot
 ![width:600px](subplots.png)
 
 ---
+
 # subplots
 
 ```python
