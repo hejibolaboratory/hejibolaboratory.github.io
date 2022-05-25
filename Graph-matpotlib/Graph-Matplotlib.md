@@ -23,6 +23,11 @@ version:2022-05-22
 - 4. 如何改变线条颜色与风格
 - 5. 如何改变字体大小
 - 6. 标注显著
+- 7. 画图技巧 7. 去掉上方和右侧的边框/spines
+- 8. 如何让y-axis断裂，不从0开始 [todo]
+- 9. 如何设置xlim, ylim,坐标范围？[todo]
+- 10. 如何绘制放在网上的可以交互的图[todo]
+- 11. 如何对大数据（>5g）的数据画图 [todo]
 
 ---
 # 为什么不用Excel画图？
@@ -364,7 +369,33 @@ plt.show()
 
 ```
 
+---
+# 画图技巧 6. 如何标注显著或者其它文字 （效果图）
 
+![width:1000px](Annotate-Significance.png)
+
+---
+# 画图技巧 7. 去掉上方和右侧的边框/spines
+使用plt.gca().spines["top"].set_visible(False)去掉上方的边框
+```python
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4])
+plt.ylabel('I am a ylabel')
+plt.xlabel('I am a loooooooooooo\noooooooooooong title')
+
+# Iterating over all the axes in the figure
+# and make the Spines Visibility as False
+for pos in ['right', 'top', ]:
+    plt.gca().spines[pos].set_visible(False)
+
+plt.show()
+```
+
+---
+# 画图技巧 7. 去掉上方和右侧的边框/spines (效果图)
+
+![width:800px](RemoveUpperRightFrame-demo.png)
 
 ---
 # References for Matplotlib-1
