@@ -30,6 +30,7 @@ version:2022-05-22
 - 5. 如何改变字体大小
 - 6. 标注显著
 - 7. 画图技巧 7. 去掉上方和右侧的边框/spines
+  8. 如何增加左方和下方的padding，让图片完整可见？
 
 ---
 
@@ -473,9 +474,76 @@ plt.show()
 
 ---
 
-# References for Matplotlib-1
+# 画图技巧 8.如何增加左方和下方的padding，让图片完整可见？
+```python
+# raised and solved by Li Ming 2022
+import colorsys
+import numpy as np
+import matplotlib.pyplot as plt
 
-![width:500px](matplotlib-reference-manual-1.jpeg)
+#data from National Bureau of Statistics
+# http://www.stats.gov.cn/
+
+year=[1970,1980,1990,2000,2010,2020]
+add_value={
+    'agriculture':[793.3,1359.5,5017.2,14717.4,38430.8,78030.9],
+    'industry':[918.1,2204.7,7744.1,45663.7,191626.5,383562.4],
+    'service industry':[568.3,1023.4,6111.6,39899.1,182061.9,551973.7]
+}
+fig,ax=plt.subplots()
+ax.stackplot(year,add_value.values(),
+             
+             labels=add_value.keys(),colors=['k','0.8','0.3'])
+ax.legend(loc='upper left')
+ax.set_title('The added value of the three industries')
+ax.set_xlabel('Year')
+ax.set_ylabel('The added value(billion)')
+plt.savefig('HW5.png',dpi=300)
+plt.show()
+```
+
+---
+# 画图技巧 8.如何增加左方和下方的padding，让图片完整可见？
+![width:800px](issue-y-label-not-visiable.png)
+
+---
+# 画图技巧 8.如何增加左方和下方的padding，让图片完整可见？(解决方案)
+通过以下的subplots_adjust函数，在下方和左方增加空格间隙padding
+```python
+fig.subplots_adjust(bottom = 0.1)
+fig.subplots_adjust(left = 0.2)
+```
+
+---
+# 画图技巧 8.如何增加左方和下方的padding，让图片完整可见？(效果图)
+```python
+#作业五：做一张可发表的图(中国三大产业增加值变化)
+
+import colorsys
+import numpy as np
+import matplotlib.pyplot as plt
+year=[1970,1980,1990,2000,2010,2020]
+add_value={
+    'agriculture':[793.3,1359.5,5017.2,14717.4,38430.8,78030.9],
+    'industry':[918.1,2204.7,7744.1,45663.7,191626.5,383562.4],
+    'service industry':[568.3,1023.4,6111.6,39899.1,182061.9,551973.7]
+}
+fig,ax=plt.subplots()
+fig.subplots_adjust(bottom = 0.1)
+fig.subplots_adjust(left = 0.2)
+ax.stackplot(year,add_value.values(),
+             labels=add_value.keys(),colors=['k','0.8','0.3'])
+ax.legend(loc='upper left')
+ax.set_title('The added value of the three industries')
+ax.set_xlabel('Year')
+ax.set_ylabel('The added value(billion)')
+plt.savefig('HW5.png',dpi=300)
+plt.show()
+```
+
+---
+# 画图技巧 8.如何增加左方和下方的padding，让图片完整可见？(效果图)
+![width:600px](issue8-solution-y-label-not-visiable.png)
 
 ---
 

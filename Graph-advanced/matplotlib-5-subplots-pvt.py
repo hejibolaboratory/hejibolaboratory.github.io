@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import chineseize_matplotlib
 
+plt.figure(figsize=(12,24))
+
 # Preparing the data to subplots
 x = np.linspace(1, 14, 14) # 14 times, PVT test
 #print(x )
@@ -32,7 +34,7 @@ error5=[0.211870802	,0.160449297,	0.127659399,	0.172497406,	0.149582233,	0.17657
 # Plot 1
 
 ax = plt.GridSpec(3, 2)
-ax.update(wspace=0.5, hspace=0.5)
+ax.update(wspace=0.2, hspace=0.5)
 
 #fig,(ax1,ax2,ax3,ax4,ax5,ax6) =plt.subplots(6, sharex=True)
 
@@ -116,6 +118,5 @@ ax5.set_xticks(np.linspace(1, 14, 14),
 for pos in ['right', 'top', ]:
     plt.gca().spines[pos].set_visible(False)
 
-
-
 plt.show()
+plt.savefig('/Users/ucdlab/Documents/GitHub/hejibolaboratory.github.io/Graph-advanced/pvt-300dpi.png', dpi=1000)
