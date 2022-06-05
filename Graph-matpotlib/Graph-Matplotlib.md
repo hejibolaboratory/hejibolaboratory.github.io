@@ -312,23 +312,43 @@ pl.show()
 ```
 
 ---
+## 画图技巧 4. 如何改变线条颜色与风格 - color参数的常用颜色缩写
+| 颜色缩写 | 代表的颜色 | 英文全文 |
+| -------- | ---------- | -------- |
+| b        | 蓝色       |   <p style="background-color:blue;">blue </p>    |
+| g        | 绿色       |   <p style="background-color:green;">green </p>   |
+| r        | 红色       |    <p style="background-color:red;">red </p>  |
+| c        | 青色       |   <p style="background-color:cyan;">cyan </p>   |
+| m        | 品红       | <p style="background-color:magenta;">magenta </p>   |
+| y        | 黄色       | <p style="background-color:yellow;">yellow </p>   |
+| k        | 黑色       |   <p style="background-color:black;">black </p>   |
+| w        | 白色       |   <p style="background-color:white;">white </p>   |
+
+---
 
 # 画图技巧 4. 如何改变线条颜色与风格
 
-## 支持的线条风格
+<div class="row">
+  <div class="col-md-8" markdown="1">
+
 ```python
 plt.plot(x, x + 0, linestyle='solid')
 plt.plot(x, x + 1, linestyle='dashed')
 plt.plot(x, x + 2, linestyle='dashdot')
 plt.plot(x, x + 3, linestyle='dotted');
 
-# 还可以用形象的符号代表线条风格
 plt.plot(x, x + 4, linestyle='-')  # 实线
 plt.plot(x, x + 5, linestyle='--') # 虚线
 plt.plot(x, x + 6, linestyle='-.') # 长短点虚线
 plt.plot(x, x + 7, linestyle=':');  # 点线
 ```
-![width:400px](Graph-with-different-line-style.jpg)
+
+</div>
+
+<div class="col-md-4" markdown="1">
+
+<img align="right" width="300" height="300" src="Graph-with-different-line-style.jpg">
+</div></div>
 
 ---
 
@@ -494,7 +514,7 @@ add_value={
 }
 fig,ax=plt.subplots()
 ax.stackplot(year,add_value.values(),
-           
+         
              labels=add_value.keys(),colors=['k','0.8','0.3'])
 ax.legend(loc='upper left')
 ax.set_title('The added value of the three industries')
@@ -573,3 +593,9 @@ plt.show()
 # References for Matplotlib-4
 
 ![width:500px](matplotlib-reference-manual-4.jpeg)
+
+---
+
+# useful websites:
+
+https://blog.csdn.net/weixin_52797843/article/details/125038128?spm=1000.2115.3001.6382&utm_medium=distribute.pc_feed_v2.none-task-blog-hot-8-125038128-null-null.pc_personrec&depth_1-utm_source=distribute.pc_feed_v2.none-task-blog-hot-8-125038128-null-null.pc_personrec
