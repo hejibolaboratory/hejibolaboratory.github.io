@@ -360,17 +360,18 @@ pl.show()
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-class="invert lead" data-color="white" data-background-image="url(bg-image.png)" data-paginate="true" data-footer="Copyright by Jibo He" class="invert lead" data-marpit-pagination="21" data-marpit-pagination-total="36" style="--class:invert lead;--color:white;--background-image:url(bg-image.png);--paginate:true;--footer:Copyright by Jibo He;color:white;background-image:url(bg-image.png);background-position:center;background-repeat:no-repeat;background-size:cover;" data-size="16:9">
 <h1>画图技巧 4. 如何改变线条颜色与风格</h1>
 <h2>支持的线条风格</h2>
-<p>'-'<br />
-'--'<br />
-'-.'<br />
-':'<br />
-'None'<br />
-' '<br />
-''<br />
-'solid'<br />
-'dashed'<br />
-'dashdot'<br />
-'dotted'</p>
+<pre><code class="language-python"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>plt.plot(x, x + <span class="hljs-number">0</span>, linestyle=<span class="hljs-string">&#x27;solid&#x27;</span>)
+plt.plot(x, x + <span class="hljs-number">1</span>, linestyle=<span class="hljs-string">&#x27;dashed&#x27;</span>)
+plt.plot(x, x + <span class="hljs-number">2</span>, linestyle=<span class="hljs-string">&#x27;dashdot&#x27;</span>)
+plt.plot(x, x + <span class="hljs-number">3</span>, linestyle=<span class="hljs-string">&#x27;dotted&#x27;</span>);
+
+<span class="hljs-comment"># 还可以用形象的符号代表线条风格</span>
+plt.plot(x, x + <span class="hljs-number">4</span>, linestyle=<span class="hljs-string">&#x27;-&#x27;</span>)  <span class="hljs-comment"># 实线</span>
+plt.plot(x, x + <span class="hljs-number">5</span>, linestyle=<span class="hljs-string">&#x27;--&#x27;</span>) <span class="hljs-comment"># 虚线</span>
+plt.plot(x, x + <span class="hljs-number">6</span>, linestyle=<span class="hljs-string">&#x27;-.&#x27;</span>) <span class="hljs-comment"># 长短点虚线</span>
+plt.plot(x, x + <span class="hljs-number">7</span>, linestyle=<span class="hljs-string">&#x27;:&#x27;</span>);  <span class="hljs-comment"># 点线</span>
+</span></span></foreignObject></svg></code></pre>
+<p><img src="Graph-with-different-line-style.jpg" alt="" style="width:400px;" /></p>
 <footer>Copyright by Jibo He</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-class="invert lead" data-color="white" data-background-image="url(bg-image.png)" data-paginate="true" data-footer="Copyright by Jibo He" class="invert lead" data-marpit-pagination="22" data-marpit-pagination-total="36" style="--class:invert lead;--color:white;--background-image:url(bg-image.png);--paginate:true;--footer:Copyright by Jibo He;color:white;background-image:url(bg-image.png);background-position:center;background-repeat:no-repeat;background-size:cover;" data-size="16:9">
@@ -520,7 +521,7 @@ add_value={
 }
 fig,ax=plt.subplots()
 ax.stackplot(year,add_value.values(),
-             
+           
              labels=add_value.keys(),colors=[<span class="hljs-string">&#x27;k&#x27;</span>,<span class="hljs-string">&#x27;0.8&#x27;</span>,<span class="hljs-string">&#x27;0.3&#x27;</span>])
 ax.legend(loc=<span class="hljs-string">&#x27;upper left&#x27;</span>)
 ax.set_title(<span class="hljs-string">&#x27;The added value of the three industries&#x27;</span>)

@@ -316,18 +316,19 @@ pl.show()
 # 画图技巧 4. 如何改变线条颜色与风格
 
 ## 支持的线条风格
+```python
+plt.plot(x, x + 0, linestyle='solid')
+plt.plot(x, x + 1, linestyle='dashed')
+plt.plot(x, x + 2, linestyle='dashdot')
+plt.plot(x, x + 3, linestyle='dotted');
 
-'-'
-'--'
-'-.'
-':'
-'None'
-' '
-''
-'solid'
-'dashed'
-'dashdot'
-'dotted'
+# 还可以用形象的符号代表线条风格
+plt.plot(x, x + 4, linestyle='-')  # 实线
+plt.plot(x, x + 5, linestyle='--') # 虚线
+plt.plot(x, x + 6, linestyle='-.') # 长短点虚线
+plt.plot(x, x + 7, linestyle=':');  # 点线
+```
+![width:400px](Graph-with-different-line-style.jpg)
 
 ---
 
@@ -475,6 +476,7 @@ plt.show()
 ---
 
 # 画图技巧 8.如何增加左方和下方的padding，让图片完整可见？
+
 ```python
 # raised and solved by Li Ming 2022
 import colorsys
@@ -492,7 +494,7 @@ add_value={
 }
 fig,ax=plt.subplots()
 ax.stackplot(year,add_value.values(),
-             
+           
              labels=add_value.keys(),colors=['k','0.8','0.3'])
 ax.legend(loc='upper left')
 ax.set_title('The added value of the three industries')
@@ -503,19 +505,26 @@ plt.show()
 ```
 
 ---
+
 # 画图技巧 8.如何增加左方和下方的padding，让图片完整可见？
+
 ![width:800px](issue-y-label-not-visiable.png)
 
 ---
+
 # 画图技巧 8.如何增加左方和下方的padding，让图片完整可见？(解决方案)
+
 通过以下的subplots_adjust函数，在下方和左方增加空格间隙padding
+
 ```python
 fig.subplots_adjust(bottom = 0.1)
 fig.subplots_adjust(left = 0.2)
 ```
 
 ---
+
 # 画图技巧 8.如何增加左方和下方的padding，让图片完整可见？(效果图)
+
 ```python
 #作业五：做一张可发表的图(中国三大产业增加值变化)
 
@@ -542,7 +551,9 @@ plt.show()
 ```
 
 ---
+
 # 画图技巧 8.如何增加左方和下方的padding，让图片完整可见？(效果图)
+
 ![width:600px](issue8-solution-y-label-not-visiable.png)
 
 ---
