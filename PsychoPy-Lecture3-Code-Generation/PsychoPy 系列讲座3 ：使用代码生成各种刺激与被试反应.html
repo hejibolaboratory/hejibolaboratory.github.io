@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>None</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file://c:\users\huawei\appdata\local\programs\python\python37-32\lib\site-packages\landslide\themes\default\css\print.css">
+    <link rel="stylesheet" media="screen, projection" href="file://c:\users\huawei\appdata\local\programs\python\python37-32\lib\site-packages\landslide\themes\default\css\screen.css">
+    
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="file://c:\users\huawei\appdata\local\programs\python\python37-32\lib\site-packages\landslide\themes\default\js\slides.js"></script>
+    
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-1">
+          <div class="inner">
+            
+            
+            <section><p>&ensp; 
+<b><center><font color=#5e2e86 ><font size=8>人人都应该会Python：人文社科专业毕业必修</font></font></center></b>
+&ensp; 
+<center><font size=6>PsychoPy系列讲座3: 使用代码生成各种刺激与被试反应</font></center>
+&ensp; 
+<center><font size=4>何吉波，博士生导师</font></center>
+<center><font size=4>清华大学心理学系</font></center>
+<center><font size=4>hejibo666@Tsinghua.edu.cn</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-2">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Outline</font></h1></header>
+            
+            
+            <section><ul>
+<li>text (English and Chinese)</li>
+<li>show instruction</li>
+<li>image</li>
+<li>shapes</li>
+<li>audio</li>
+<li>Video</li>
+<li>Scale</li>
+<li>load data source</li>
+<li>write data to file</li>
+<li>Mouse response</li>
+<li>Keyboard response</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-3">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Show text</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="ch">#!/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span>
+<span class="lineno"> 4 </span><span class="c1">#create a window to draw in</span>
+<span class="lineno"> 5 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span><span class="mf">800.0</span><span class="p">),</span><span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span>
+<span class="lineno"> 6 </span>    <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span> <span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 7 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 8 </span><span class="c1">#INITIALISE SOME STIMULI</span>
+<span class="lineno"> 9 </span><span class="n">psychopyTxt</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span>
+<span class="lineno">10 </span>            <span class="n">text</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">&quot;PsychoPy is a GREAT tool&quot;</span><span class="p">,</span>
+<span class="lineno">11 </span>            <span class="n">units</span><span class="o">=</span><span class="s1">&#39;norm&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<span class="lineno">12 </span>            <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="n">alignHoriz</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="n">alignVert</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+<span class="lineno">13 </span>
+<span class="lineno">14 </span><span class="n">psychopyTxt</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">15 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">16 </span><span class="c1">#pause, so you get a chance to see it!</span>
+<span class="lineno">17 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+
+<p>&ensp; </p>
+<p><center><font size=4>Source code file: showText.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-4">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Color Property</font></h1></header>
+            
+            
+            <section><ul>
+<li>color='#FFFFFF'</li>
+</ul>
+<p><img src="C:/Users/HUAWEI/Desktop/python-h5/1.png" width = "650" height = "400" alt="1" align=center /></p>
+<p><center><font size=4>References: https://www.color-hex.com</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-5">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Color Property</font></h1></header>
+            
+            
+            <section><p><img src="C:/Users/HUAWEI/Desktop/python-h5/2.png" width = "430" height = "500" alt="1" align=right /></p>
+<ul>
+<li>RGB pairs</li>
+<li>color=(255,0,0)</li>
+<li>(0,255,0)</li>
+<li>(0,0,255)</li>
+<li>(0,0,0)</li>
+<li>(255,255,255)</li>
+</ul>
+<p><rihgt><font size=4>https://www.rapidtables.com/web/color/RGB_Color.html</font></right></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-6">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Coordinate System</font></h1></header>
+            
+            
+            <section><p><img src="C:/Users/HUAWEI/Desktop/python-h5/3.png" width = "600" height = "400" alt="1" align=right /></p>
+<ul>
+<li>center<ul>
+<li>(0,0)</li>
+</ul>
+</li>
+<li>top right<ul>
+<li>(1,1)</li>
+</ul>
+</li>
+<li>top left<ul>
+<li>(-1,1)</li>
+</ul>
+</li>
+<li>bottom right<ul>
+<li>(1,-1)</li>
+</ul>
+</li>
+<li>bottom left<ul>
+<li>(-1,-1)</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-7">
+          <div class="inner">
+            
+            <header><h1><b><font color=#5e2e86 >秀/显示中文</font></b></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy.visual</span> <span class="kn">import</span> <span class="n">Window</span><span class="p">,</span> <span class="n">TextStim</span>
+<span class="lineno"> 3 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">event</span>
+<span class="lineno"> 4 </span>
+<span class="lineno"> 5 </span><span class="n">win</span> <span class="o">=</span> <span class="n">Window</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">winType</span><span class="o">=</span><span class="s2">&quot;pygame&quot;</span><span class="p">)</span>
+<span class="lineno"> 6 </span><span class="n">a</span> <span class="o">=</span> <span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;清华，你好&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">55</span><span class="p">,</span>
+<span class="lineno"> 7 </span>        <span class="n">font</span><span class="o">=</span><span class="s2">&quot;simsun.ttf&quot;</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">55</span><span class="p">))</span>
+<span class="lineno"> 8 </span>
+<span class="lineno"> 9 </span><span class="n">a</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">10 </span><span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">11 </span><span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">([</span><span class="s2">&quot;space&quot;</span><span class="p">])</span>
+</pre></div>
+
+<p>&ensp; </p>
+<p><center><font size=4>Source code file:ChineseTextPresentation.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-8">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Show Instruction</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="c1"># !/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span><span class="c1"># create a window to draw in</span>
+<span class="lineno"> 4 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span> <span class="mf">800.0</span><span class="p">),</span> <span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span>
+<span class="lineno"> 5 </span>        <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 6 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 7 </span><span class="c1"># INITIALISE SOME STIMULI</span>
+<span class="lineno"> 8 </span><span class="n">instruction</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span>
+<span class="lineno"> 9 </span>        <span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;&#39;&#39;         Instruction</span>
+<span class="lineno">10 </span><span class="s1">This is an experiment instruction. You need to do the following stuff.</span>
+<span class="lineno">11 </span><span class="s1">1. Fixate at the dot.</span>
+<span class="lineno">12 </span><span class="s1">2. press the &#39;Y&#39; or &#39;N&#39; key </span>
+<span class="lineno">13 </span><span class="s1">Press any key to continue&#39;&#39;&#39;</span><span class="p">,</span>
+<span class="lineno">14 </span>        <span class="n">units</span><span class="o">=</span><span class="s1">&#39;norm&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<span class="lineno">15 </span>        <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="n">alignHoriz</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">alignVert</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+<span class="lineno">16 </span><span class="n">instruction</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">17 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">18 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+
+<p><center><font size=4>Source code file: showInstruction.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-9">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >End of Experiment</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="c1"># !/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span><span class="c1"># create a window to draw in</span>
+<span class="lineno"> 4 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span> <span class="mf">800.0</span><span class="p">),</span> <span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span>
+<span class="lineno"> 5 </span>        <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 6 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 7 </span><span class="c1"># INITIALISE SOME STIMULI</span>
+<span class="lineno"> 8 </span><span class="n">EndofExperiment</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span>
+<span class="lineno"> 9 </span>        <span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;&#39;&#39;         Thank you!</span>
+<span class="lineno">10 </span>
+<span class="lineno">11 </span><span class="s1">This is the end of the experiment. &#39;&#39;&#39;</span><span class="p">,</span>
+<span class="lineno">12 </span>        <span class="n">units</span><span class="o">=</span><span class="s1">&#39;norm&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<span class="lineno">13 </span>        <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">],</span> <span class="n">alignHoriz</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">alignVert</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+<span class="lineno">14 </span>
+<span class="lineno">15 </span><span class="n">EndofExperiment</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">16 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">17 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+
+<p><center><font size=4>Source code file: showEndofExperiment.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-10">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Show Image</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="ch">#!/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">core</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span><span class="kn">import</span> <span class="nn">psychopy.sound</span>
+<span class="lineno"> 4 </span><span class="c1">#create a window to draw in</span>
+<span class="lineno"> 5 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mi">600</span><span class="p">,</span><span class="mi">600</span><span class="p">),</span> <span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+<span class="lineno"> 6 </span>    <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span><span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;norm&#39;</span><span class="p">)</span>
+<span class="lineno"> 7 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 8 </span><span class="c1">#INITIALISE SOME STIMULI</span>
+<span class="lineno"> 9 </span><span class="n">faceRGB</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">ImageStim</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span><span class="n">image</span><span class="o">=</span><span class="s1">&#39;jibohe.PNG&#39;</span><span class="p">,</span>
+<span class="lineno">10 </span>    <span class="n">mask</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<span class="lineno">11 </span>    <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">),</span>
+<span class="lineno">12 </span>    <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="lineno">13 </span> <span class="n">faceRGB</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">14 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">15 </span><span class="c1">#pause, so you get a chance to see it!</span>
+<span class="lineno">16 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+
+<p><img src="C:/Users/HUAWEI/Desktop/python-h5/4.png" width = "280" height = "170" alt="1" align=center /></p>
+<p><center><font size=4>Source code file: showImage.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-11">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Shape-line</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="c1"># !/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span><span class="c1"># create a window to draw in</span>
+<span class="lineno"> 4 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span> <span class="mf">800.0</span><span class="p">),</span> <span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span>
+<span class="lineno"> 5 </span>        <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 6 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 7 </span>
+<span class="lineno"> 8 </span><span class="c1"># INITIALISE SOME STIMULI</span>
+<span class="lineno"> 9 </span><span class="n">THoriLine</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="p">(</span><span class="mf">2.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="lineno">10 </span><span class="n">THoriLine</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">11 </span>
+<span class="lineno">12 </span><span class="n">TVertiLine</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">))</span>
+<span class="lineno">13 </span><span class="n">TVertiLine</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">14 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">15 </span>
+<span class="lineno">16 </span><span class="c1"># pause, so you get a chance to see it!</span>
+<span class="lineno">17 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+
+<p><img src="C:/Users/HUAWEI/Desktop/python-h5/5.png" width = "200" height = "150" alt="1" align=center /></p>
+<p><center><font size=4>Source code file: showLine.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-12">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Shape – T versus L</font></h1></header>
+            
+            
+            <section><p><img src="C:/Users/HUAWEI/Desktop/python-h5/6.png" width = "550" height = "400" alt="1" align=center /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-13">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Shape – line – tilted T</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="ch">#!/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span> <span class="c1">#create a window to draw in</span>
+<span class="lineno"> 4 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span><span class="mf">800.0</span><span class="p">),</span><span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span>
+<span class="lineno"> 5 </span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span> <span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 6 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 7 </span><span class="n">THoriLine</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">2.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">))</span>
+<span class="lineno"> 8 </span><span class="n">THoriLine</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="n">TVertiLine</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">1.4</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+<span class="lineno"> 9 </span><span class="n">TVertiLine</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">10 </span> <span class="c1">#pause, so you get a chance to see it!</span>
+<span class="lineno">11 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+
+<p><img src="C:/Users/HUAWEI/Desktop/python-h5/7.png" width = "260" height = "260" alt="1" align=center /></p>
+<p><center><font size=4>Source code file: Shape-T.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-14">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Shape – line – tilted T</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="c1"># !/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span>
+<span class="lineno"> 4 </span><span class="c1"># create a window to draw in</span>
+<span class="lineno"> 5 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span> <span class="mf">800.0</span><span class="p">),</span> <span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span>
+<span class="lineno"> 6 </span>        <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 7 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 8 </span>
+<span class="lineno"> 9 </span><span class="c1"># INITIALISE SOME STIMULIsquare = visual.Rect(myWin, width=1, height=1)</span>
+<span class="lineno">10 </span><span class="n">square</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="lineno">11 </span><span class="n">square</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">12 </span>
+<span class="lineno">13 </span>
+<span class="lineno">14 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">15 </span><span class="c1"># pause, so you get a chance to see it!</span>
+<span class="lineno">16 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+
+<p><img src="C:/Users/HUAWEI/Desktop/python-h5/8.png" width = "150" height = "150" alt="1" align=center /></p>
+<p><center><font size=4>Source code file: Shape-Square.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-15">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Shape-circle</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="ch">#!/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span>
+<span class="lineno"> 4 </span><span class="c1">#create a window to draw in</span>
+<span class="lineno"> 5 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span><span class="mf">800.0</span><span class="p">),</span><span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span>
+<span class="lineno"> 6 </span>    <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span> <span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 7 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 8 </span>
+<span class="lineno"> 9 </span><span class="c1">#INITIALISE SOME STIMULI</span>
+<span class="lineno">10 </span><span class="n">circle</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edges</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="lineno">11 </span><span class="n">circle</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno">12 </span><span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">13 </span>
+<span class="lineno">14 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">15 </span><span class="c1">#pause, so you get a chance to see it!</span>
+<span class="lineno">16 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+
+<p><img src="C:/Users/HUAWEI/Desktop/python-h5/9.png" width = "150" height = "150" alt="1" align=center /></p>
+<p><center><font size=4>Source code file: Shape-circle.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-16">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >More complex stimuli</font></h1></header>
+            
+            
+            <section><p>&ensp; </p>
+<p><img src="C:/Users/HUAWEI/Desktop/python-h5/10.png" width = "800" height = "300" alt="1" align=center /></p>
+<p>&ensp; </p>
+<p>He, J. , &amp; Mccarley, J. S. . (2010). Executive working memory load does not compromise perceptual processing during visual search: evidence from additive factors analysis. Attention Perception &amp; Psychophysics, 72(2), 308-316.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-17">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >C versus O combined shapes</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="c1"># -*- coding: utf-8 -*- </span>
+<span class="lineno"> 2 </span><span class="c1">#!/usr/bin/env python2</span>
+<span class="lineno"> 3 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 4 </span><span class="kn">import</span> <span class="nn">random</span>
+<span class="lineno"> 5 </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="lineno"> 6 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span><span class="mf">800.0</span><span class="p">),</span><span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet’, color=(0, 0,</span>
+<span class="lineno"> 7 </span><span class="mi">0</span><span class="p">),</span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span> <span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 8 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 9 </span><span class="n">circle</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edges</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="lineno">10 </span><span class="n">circle</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno">11 </span><span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="n">square</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="lineno">12 </span><span class="n">square</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno">13 </span><span class="n">square</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">14 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span>
+</pre></div>
+
+<p><img src="C:/Users/HUAWEI/Desktop/python-h5/11.png" width = "165" height = "180" alt="1" align=center /></p>
+<p><center><font size=4>Source code file: Gapped C.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-18">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Dotted C and O combined shapes</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="ch">#!/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span><span class="kn">import</span> <span class="nn">random</span>
+<span class="lineno"> 4 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span><span class="mf">800.0</span><span class="p">),</span><span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span>
+<span class="lineno"> 5 </span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="lineno"> 6 </span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span> <span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 7 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 8 </span><span class="n">circle</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edges</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="lineno"> 9 </span><span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">10 </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">500</span><span class="p">):</span>
+<span class="lineno">11 </span><span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="lineno">12 </span><span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">-</span> <span class="mi">2</span>
+<span class="lineno">13 </span><span class="n">circle</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span><span class="n">radius</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">edges</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="lineno">14 </span><span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">15 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">16 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span>
+</pre></div>
+
+<p><img src="C:/Users/HUAWEI/Desktop/python-h5/12.png" width = "150" height = "150" alt="1" align=center /></p>
+<p><center><font size=4>Source code file: dotttttsssss C2.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-19">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Q versus O</font></h1></header>
+            
+            
+            <section><p><img src="C:/Users/HUAWEI/Desktop/python-h5/13.png" width = "400" height = "500" alt="1" align=center /></p>
+<p>Seo, H. J. , &amp; Milanfar, P. . (2009). Static and space-time visual saliency detection by self-resemblance. Journal of Vision, 9(12), 15-15.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-20">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Q and O combined shapes</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="ch">#!/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span><span class="kn">import</span> <span class="nn">random</span>
+<span class="lineno"> 4 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span><span class="mf">800.0</span><span class="p">),</span><span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span>
+<span class="lineno"> 5 </span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="lineno"> 6 </span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span> <span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 7 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span> <span class="n">circle</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+<span class="lineno"> 8 </span><span class="n">edges</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">lineWidth</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="lineno"> 9 </span><span class="n">circle</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno">10 </span><span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">11 </span><span class="n">TVertiLine</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Line</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">))</span>
+<span class="lineno">12 </span><span class="n">TVertiLine</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">13 </span><span class="n">circlePositionList</span> <span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="p">,(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">)]</span>
+<span class="lineno">14 </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+<span class="lineno">15 </span><span class="n">circle</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Circle</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edges</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="lineno">16 </span><span class="n">circle</span><span class="o">.</span><span class="n">pos</span><span class="o">=</span><span class="p">(</span><span class="n">circlePositionList</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">circlePositionList</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="lineno">17 </span><span class="n">circle</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">18 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">19 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">10.0</span><span class="p">)</span>
+</pre></div>
+
+<p><img src="C:/Users/HUAWEI/Desktop/python-h5/14.png" width = "110" height = "110" alt="1" align=center /></p>
+<p><center><font size=4>Source code file: QinOs.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-21">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Audio</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="ch">#!/usr/bin/env python2</span>
+<span class="lineno">2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno">3 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">sound</span><span class="p">,</span><span class="n">core</span>
+<span class="lineno">4 </span><span class="n">tada</span> <span class="o">=</span> <span class="n">sound</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="s1">&#39;I_Believe_I_Can_Fly_sample.ogg&#39;</span><span class="p">)</span>
+<span class="lineno">5 </span><span class="n">tada</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>
+<span class="lineno">6 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="lineno">7 </span><span class="n">core</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+
+<p>&ensp; </p>
+<p><center><font size=4>Source code file: playAudio.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-22">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Video</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno">2 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span><span class="mf">800.0</span><span class="p">),</span><span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+<span class="lineno">3 </span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span> <span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno">4 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno">5 </span><span class="n">mov</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">MovieStim2</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="s1">&#39;cry.mp4&#39;</span><span class="p">)</span>
+<span class="lineno">6 </span><span class="n">mov</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span> <span class="c1"># draw the current frame (automagically determined)</span>
+<span class="lineno">7 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">8 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+</pre></div>
+
+<p>&ensp; </p>
+<p><center><font size=4>Source code file: playVideos2pc.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-23">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Scale</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span><span class="n">event</span>
+<span class="lineno"> 2 </span> <span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">()</span>
+<span class="lineno"> 3 </span><span class="n">rating</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">RatingScale</span><span class="p">(</span><span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;rating&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;triangle&#39;</span><span class="p">,</span>
+<span class="lineno"> 4 </span><span class="n">size</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">],</span> <span class="n">low</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="sa">u</span><span class="s1">&#39;不同意&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;中立&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;完全同意&#39;</span><span class="p">],</span>
+<span class="lineno"> 5 </span><span class="n">scale</span><span class="o">=</span><span class="sa">u</span><span class="s1">&#39;你多大程度上赞同希拉里当选美国总统？&#39;</span><span class="p">)</span>
+<span class="lineno"> 6 </span><span class="k">while</span> <span class="n">rating</span><span class="o">.</span><span class="n">noResponse</span><span class="p">:</span>
+<span class="lineno"> 7 </span><span class="c1">#item.draw()</span>
+<span class="lineno"> 8 </span><span class="n">rating</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno"> 9 </span><span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">10 </span><span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">&quot;选了</span><span class="si">%d</span><span class="s2">用了</span><span class="si">%.3f</span><span class="s2">秒</span><span class="se">\n</span><span class="s2">按空格退出&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">rating</span><span class="o">.</span><span class="n">getRating</span><span class="p">(),</span> <span class="n">rating</span><span class="o">.</span><span class="n">getRT</span><span class="p">()))</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">11 </span><span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">12 </span> <span class="k">while</span> <span class="s1">&#39;space&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">event</span><span class="o">.</span><span class="n">getKeys</span><span class="p">():</span>
+<span class="lineno">13 </span>   <span class="k">pass</span>
+<span class="lineno">14 </span><span class="k">print</span> <span class="n">rating</span><span class="o">.</span><span class="n">getRating</span><span class="p">()</span>
+<span class="lineno">15 </span><span class="k">print</span> <span class="n">rating</span><span class="o">.</span><span class="n">getRT</span><span class="p">()</span>
+<span class="lineno">16 </span><span class="k">print</span> <span class="n">rating</span><span class="o">.</span><span class="n">getHistory</span><span class="p">()</span>
+</pre></div>
+
+<p>&ensp; </p>
+<p><center><font size=4>Source code file: ScaleBuiltIn.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-24">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Load data source</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="n">infile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datasource.csv&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="lineno">2 </span><span class="n">datasource</span> <span class="o">=</span><span class="p">{}</span>
+<span class="lineno">3 </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">infile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]:</span>
+<span class="lineno">4 </span>    <span class="n">trial</span><span class="p">,</span><span class="n">number</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="lineno">5 </span>    <span class="n">datasource</span><span class="p">[</span><span class="n">trial</span><span class="p">]</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="lineno">6 </span>
+<span class="lineno">7 </span><span class="k">print</span> <span class="n">datasource</span>
+<span class="lineno">8 </span><span class="n">infile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="lineno">9 </span><span class="k">print</span> <span class="s1">&#39;-_-!&#39;</span>
+</pre></div>
+
+<p>&ensp; </p>
+<p><center><font size=4>Source code file: loadDataSource.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-25">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Write data file</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;experiment data file.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="lineno">2 </span><span class="k">print</span> <span class="o">&gt;&gt;</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">&#39;THIS IS A GREAT EXPERIMENT!&#39;</span>
+<span class="lineno">3 </span><span class="n">outfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="lineno">4 </span><span class="k">print</span> <span class="s1">&#39;-_-!&#39;</span>
+</pre></div>
+
+<p>&ensp; </p>
+<p><center><font size=4>Source code file: WriteExperimentData.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-26">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Get mouse inputs</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">core</span><span class="p">,</span> <span class="n">visual</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno">2 </span> <span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">([</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s1">&#39;pix&#39;</span><span class="p">)</span>
+<span class="lineno">3 </span><span class="n">mouse</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">Mouse</span><span class="p">(</span><span class="n">win</span><span class="o">=</span><span class="n">win</span><span class="p">)</span>
+<span class="lineno">4 </span><span class="n">mouse_pos</span> <span class="o">=</span> <span class="n">mouse</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span>
+<span class="lineno">5 </span> <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="lineno">6 </span><span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">mouse</span><span class="o">.</span><span class="n">getPressed</span><span class="p">()):</span> <span class="c1">#if any mouse button is pressed</span>
+<span class="lineno">7 </span><span class="n">mouse_pos</span> <span class="o">=</span> <span class="n">mouse</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span> <span class="c1">#get its position at time of button press</span>
+<span class="lineno">8 </span><span class="k">break</span>
+<span class="lineno">9 </span><span class="k">print</span> <span class="s1">&#39;user clicked at&#39;</span><span class="p">,</span> <span class="n">mouse_pos</span>
+</pre></div>
+
+<p>&ensp; </p>
+<p><center><font size=4>Source code file: getMouseInput.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-27">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Show text until a mouse click</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="ch">#!/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 3 </span><span class="n">myWin</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">((</span><span class="mf">800.0</span><span class="p">,</span><span class="mf">800.0</span><span class="p">),</span><span class="n">allowGUI</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span><span class="n">winType</span><span class="o">=</span><span class="s1">&#39;pyglet&#39;</span><span class="p">,</span>
+<span class="lineno"> 4 </span><span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;testMonitor&#39;</span><span class="p">,</span> <span class="n">units</span> <span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">screen</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno"> 5 </span><span class="n">myWin</span><span class="o">.</span><span class="n">setRecordFrameIntervals</span><span class="p">()</span>
+<span class="lineno"> 6 </span><span class="n">psychopyTxt</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">myWin</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#FFFFFF&#39;</span><span class="p">,</span>
+<span class="lineno"> 7 </span><span class="n">text</span> <span class="o">=</span> <span class="sa">u</span><span class="s2">&quot;PsychoPy is a GREAT tool&quot;</span><span class="p">,</span>
+<span class="lineno"> 8 </span><span class="n">units</span><span class="o">=</span><span class="s1">&#39;norm&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+<span class="lineno"> 9 </span><span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="n">alignHoriz</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span><span class="n">alignVert</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+<span class="lineno">10 </span> <span class="n">psychopyTxt</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">11 </span><span class="n">myWin</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">12 </span><span class="n">mouse</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">Mouse</span><span class="p">(</span><span class="n">win</span><span class="o">=</span><span class="n">myWin</span><span class="p">)</span>
+<span class="lineno">13 </span><span class="k">if</span> <span class="n">mouse</span><span class="p">:</span>
+<span class="lineno">14 </span>     <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="lineno">15 </span>         <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">mouse</span><span class="o">.</span><span class="n">getPressed</span><span class="p">()):</span> <span class="c1">#if any mouse button is pressed</span>
+<span class="lineno">16 </span>                <span class="n">mouse_pos</span> <span class="o">=</span> <span class="n">mouse</span><span class="o">.</span><span class="n">getPos</span><span class="p">()</span> <span class="c1">#get its position at time of button press</span>
+<span class="lineno">17 </span>                <span class="k">break</span>
+<span class="lineno">18 </span>        <span class="k">else</span><span class="p">:</span>
+<span class="lineno">19 </span>            <span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span>
+</pre></div>
+
+<p>&ensp; </p>
+<p><center><font size=4>Source code file: showTextUntilMouseClick.py</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              27/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-28">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Get keyboard inputs</font></h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="ch">#!/usr/bin/env python2</span>
+<span class="lineno"> 2 </span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="lineno"> 3 </span><span class="kn">from</span> <span class="nn">psychopy</span> <span class="kn">import</span> <span class="n">visual</span><span class="p">,</span> <span class="n">core</span><span class="p">,</span> <span class="n">event</span>
+<span class="lineno"> 4 </span><span class="n">win</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">Window</span><span class="p">(</span><span class="n">fullscr</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> 
+<span class="lineno"> 5 </span><span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="mi">600</span><span class="p">),</span>
+<span class="lineno"> 6 </span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">))</span>
+<span class="lineno"> 7 </span><span class="n">text_1</span> <span class="o">=</span> <span class="n">visual</span><span class="o">.</span><span class="n">TextStim</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;I love China&#39;</span><span class="p">,</span>
+<span class="lineno"> 8 </span><span class="n">height</span> <span class="o">=</span> <span class="mf">0.12</span><span class="p">,</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">),</span><span class="n">bold</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span><span class="n">italic</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;pink&#39;</span><span class="p">)</span>
+<span class="lineno"> 9 </span><span class="n">timer</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+<span class="lineno">10 </span><span class="n">text_1</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="lineno">11 </span><span class="n">win</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<span class="lineno">12 </span><span class="n">core</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="lineno">13 </span><span class="n">timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span> 
+<span class="lineno">14 </span><span class="n">k_1</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">waitKeys</span><span class="p">()</span>
+<span class="lineno">15 </span><span class="n">timeUse</span> <span class="o">=</span> <span class="n">timer</span><span class="o">.</span><span class="n">getTime</span><span class="p">()</span> 
+<span class="lineno">16 </span><span class="k">print</span> <span class="n">k_1</span><span class="p">,</span> <span class="n">timeUse</span>
+</pre></div>
+
+<p>&ensp; </p>
+<p><center><font size=4>Source code file: getKeyboardInputs.py
+</font></center></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              28/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: psychopy1.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-29">
+          <div class="inner">
+            
+            <header><h1><font color=#5e2e86 >Summary</font></h1></header>
+            
+            
+            <section><p>Important Functions</p>
+<ul>
+<li>visual.TextStim</li>
+<li>visual.ImageStim</li>
+<li>visual.Line</li>
+<li>visual.Rect</li>
+<li>visual.Circle</li>
+<li>sound.Sound</li>
+<li>visual.MovieStim2</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="psychopy1.md">psychopy1.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              29/29
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">-</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2"><font color=#5e2e86 >Outline</font></a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3"><font color=#5e2e86 >Show text</font></a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4"><font color=#5e2e86 >Color Property</font></a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5"><font color=#5e2e86 >Color Property</font></a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6"><font color=#5e2e86 >Coordinate System</font></a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7"><b><font color=#5e2e86 >秀/显示中文</font></b></a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8"><font color=#5e2e86 >Show Instruction</font></a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9"><font color=#5e2e86 >End of Experiment</font></a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10"><font color=#5e2e86 >Show Image</font></a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11"><font color=#5e2e86 >Shape-line</font></a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12"><font color=#5e2e86 >Shape – T versus L</font></a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13"><font color=#5e2e86 >Shape – line – tilted T</font></a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14"><font color=#5e2e86 >Shape – line – tilted T</font></a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15"><font color=#5e2e86 >Shape-circle</font></a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16"><font color=#5e2e86 >More complex stimuli</font></a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17"><font color=#5e2e86 >C versus O combined shapes</font></a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18"><font color=#5e2e86 >Dotted C and O combined shapes</font></a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19"><font color=#5e2e86 >Q versus O</font></a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20"><font color=#5e2e86 >Q and O combined shapes</font></a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21"><font color=#5e2e86 >Audio</font></a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22"><font color=#5e2e86 >Video</font></a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23"><font color=#5e2e86 >Scale</font></a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24"><font color=#5e2e86 >Load data source</font></a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25"><font color=#5e2e86 >Write data file</font></a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26"><font color=#5e2e86 >Get mouse inputs</font></a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27"><font color=#5e2e86 >Show text until a mouse click</font></a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28"><font color=#5e2e86 >Get keyboard inputs</font></a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-29">
+        <th><a href="#slide29"><font color=#5e2e86 >Summary</font></a></th>
+        <td><a href="#slide29">29</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
