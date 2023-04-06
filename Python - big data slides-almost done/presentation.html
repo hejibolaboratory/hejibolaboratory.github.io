@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>PYTHON爬虫、大数据处理与商业智能</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/landslide/themes/default/css/screen.css">
+    
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/landslide/themes/default/js/slides.js"></script>
+    
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-1">
+          <div class="inner">
+            
+            <header><h1>PYTHON爬虫、大数据处理与商业智能</h1></header>
+            
+            
+            <section><h2>何吉波，博士</h2>
+<h2>清华大学社科学院</h2>
+<p>E-mail: hejibo666@Tsinghua.edu.cn</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-2">
+          <div class="inner">
+            
+            <header><h1>框架</h1></header>
+            
+            
+            <section><h3>■ 1. 爬虫，抓取RateMyProfessor.com</h3>
+<h3>■ 2. 大数据可视化/商业智能 Microsoft Power BI</h3>
+<h3>■ 3. 大数据分析</h3></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-3">
+          <div class="inner">
+            
+            <header><h1>第一节 Python 网络爬虫</h1></header>
+            
+            
+            <section><h3>Dr. Jibo He</h3>
+<h3>清华大学社科学院心理学系</h3></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-4">
+          <div class="inner">
+            
+            <header><h1>网络爬虫</h1></header>
+            
+            
+            <section><p><strong>什么是网络爬虫</strong>
+<strong>百科定义</strong>:一种按照一定的规则,自动地抓取万维网信息的程序或者脚本。</p>
+<p><strong>网络爬虫能做什么:</strong>
+数据获取,搜索引擎.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-5">
+          <div class="inner">
+            
+            <header><h1>网络通信</h1></header>
+            
+            
+            <section><h3>简单过程</h3>
+<p>1.本地浏览器客户端)——请求一-&gt;服务器(服务端)
+2本地浏览器客户端)&lt;--文件数据一服务器服务端)
+3.本地浏览器(客户端)进行解析文件数据并且展现。</p>
+<h1>URL</h1>
+<p><strong>URL</strong> :{ Uniform Resource Locator)统一资源定位符,即请求资源地址
+URL组成:</p>
+<h3>基本上是由三部分组成</h3>
+<p>1协议(HTP呀,FTP呀~~等等
+2主机的P地址(或者域名)
+3请求主机资源的具体地址(目录,文件名等
+<strong>URL示例</strong>
+http://www.pku.edu.cn/academics/index.htm</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-6">
+          <div class="inner">
+            
+            <header><h1>下载一个网页</h1></header>
+            
+            
+            <section><p>urllib2:是一个标准库，安装python之后就自带 http://docs.python.org/2.7/library/urllib2.html</p>
+<pre><code>!python 
+import urllib2
+response = urllib2.urlopen('http://python.org/’) html = response.read()
+print response
+print html
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-7">
+          <div class="inner">
+            
+            <header><h1>模拟浏览器</h1></header>
+            
+            
+            <section><h3>• 给爬虫添加User Agent</h3>
+<h3>• 标识爬虫为特定身份</h3>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="lineno">2 </span><span class="n">request</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="err">‘</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">ratemyprofessor</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="err">’</span><span class="p">)</span> <span class="c1">#注意大小写 request.add_header(&quot;User-Agent&quot;, &quot;Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)&quot;)</span>
+<span class="lineno">3 </span><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">()</span>
+<span class="lineno">4 </span><span class="n">response</span> <span class="o">=</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">request</span><span class="p">)</span> <span class="c1"># 获取服务器返回信息</span>
+<span class="lineno">5 </span><span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="lineno">6 </span><span class="n">Print</span> <span class="n">html</span>
+</pre></div>
+
+<h1>模拟浏览器</h1>
+<h3>• 添加暂停时间</h3>
+<h3>• 防止爬虫被服务器管理员封禁</h3>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="k">for</span> <span class="n">PageIndex</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1901080</span><span class="p">,</span><span class="mi">1901092</span><span class="p">):</span> <span class="n">CrawlPage</span><span class="p">(</span><span class="n">PageIndex</span><span class="p">)</span>
+<span class="lineno">2 </span><span class="k">if</span> <span class="n">PageIndex</span><span class="o">%</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="lineno">3 </span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 暂停 1 秒</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-8">
+          <div class="inner">
+            
+            <header><h1>数据保存</h1></header>
+            
+            
+            <section><h3>• 存储获取的网页数据</h3>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;myfile.html&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> 
+<span class="lineno">2 </span><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="lineno">3 </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-9">
+          <div class="inner">
+            
+            <header><h1>爬取ratemyprofessor</h1></header>
+            
+            
+            <section><h3>爬虫的四个主要步骤:</h3>
+<ol>
+<li>明确目标 (要知道你准备在哪个范围或者网站去搜索) </li>
+<li>爬 (将所有的网站的内容全部爬下来)</li>
+<li>取 (去掉对我们没用处的数据)</li>
+<li>处理数据</li>
+</ol></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-10">
+          <div class="inner">
+            
+            <header><h1>获得网页</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="kn">import</span> <span class="nn">cPickle</span> <span class="kn">as</span> <span class="nn">p1</span>
+<span class="lineno"> 2 </span><span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="lineno"> 3 </span>
+<span class="lineno"> 4 </span><span class="n">url</span> <span class="o">=</span><span class="err">‘</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ratemyprofessors</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ShowRatings</span><span class="o">.</span><span class="n">jsp</span><span class="err">?</span><span class="n">tid</span><span class="o">=</span><span class="mi">1901092</span><span class="err">’</span>
+<span class="lineno"> 5 </span><span class="n">head</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="lineno"> 6 </span><span class="n">head</span><span class="p">[</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Safari/535.19’ req = urllib2.Request(url, headers=head)</span>
+<span class="lineno"> 7 </span><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">()</span>
+<span class="lineno"> 8 </span><span class="n">html</span> <span class="o">=</span> <span class="n">pageFile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8’)</span>
+<span class="lineno"> 9 </span><span class="n">reviewfile</span> <span class="o">=</span><span class="sa">r</span><span class="s1">&#39;C:\ratemyprofessor-product-review-1901092-page.data’ f = file(reviewfile, &#39;</span><span class="n">w</span><span class="s1">&#39;)</span>
+<span class="lineno">10 </span><span class="n">p1</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="c1"># dump the object to a file</span>
+<span class="lineno">11 </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="lineno">12 </span><span class="k">print</span> <span class="s1">&#39;finished page1901092’</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-11">
+          <div class="inner">
+            
+            <header><h1>获得网页</h1></header>
+            
+            
+            <section><h3>如何爬取多个网页:for loop, 模块化思维</h3>
+<h3>如何处理异常情况:try except</h3>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="k">def</span> <span class="nf">CrawlPage</span><span class="p">(</span><span class="n">PageIndex</span><span class="p">):</span> <span class="k">try</span><span class="p">:</span>
+<span class="lineno">2 </span><span class="k">except</span><span class="p">:</span>
+<span class="lineno">3 </span><span class="k">print</span> <span class="s1">&#39;!!!!!!!!!!!!!!!!!!!!!!!!failed for </span><span class="si">%d</span><span class="s1"> page&#39;</span><span class="o">%</span><span class="n">PageIndex</span>
+<span class="lineno">4 </span><span class="k">for</span> <span class="n">PageIndex</span> <span class="ow">in</span> <span class="n">PageIndexs</span><span class="p">:</span> <span class="n">CrawlPage</span><span class="p">(</span><span class="n">PageIndex</span><span class="p">)</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-12">
+          <div class="inner">
+            
+            <header><h1>获得网页</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="k">def</span> <span class="nf">CrawlPage</span><span class="p">(</span><span class="n">PageIndex</span><span class="p">):</span> <span class="k">try</span><span class="p">:</span>
+<span class="lineno"> 2 </span><span class="n">url</span> <span class="o">=</span><span class="err">‘</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">ratemyprofessors</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ShowRatings</span><span class="o">.</span><span class="n">jsp</span><span class="err">?</span><span class="n">tid</span><span class="o">=%</span><span class="n">s</span><span class="s1">&#39;%PageIndex’</span>
+<span class="lineno"> 3 </span><span class="n">head</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="lineno"> 4 </span><span class="n">head</span><span class="p">[</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Mozilla/5.0 (Linux; Android 4.1.1; Nexus 7 Build/JRO03D)</span>
+<span class="lineno"> 5 </span><span class="n">AppleWebKit</span><span class="o">/</span><span class="mf">535.19</span> <span class="p">(</span><span class="n">KHTML</span><span class="p">,</span> <span class="n">like</span> <span class="n">Gecko</span><span class="p">)</span> <span class="n">Chrome</span><span class="o">/</span><span class="mf">18.0</span><span class="o">.</span><span class="mf">1025.166</span> <span class="n">Safari</span><span class="o">/</span><span class="mf">535.19</span><span class="err">’</span> <span class="n">req</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">head</span><span class="p">)</span>
+<span class="lineno"> 6 </span><span class="n">opener</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">build_opener</span><span class="p">()</span>
+<span class="lineno"> 7 </span><span class="n">html</span> <span class="o">=</span> <span class="n">pageFile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8’)</span>
+<span class="lineno"> 8 </span><span class="n">reviewfile</span> <span class="o">=</span><span class="sa">r</span><span class="s1">&#39;C:\Users\Administrator\Desktop\ratemyprofessor-product-review-</span><span class="si">%d</span><span class="s1">-</span>
+<span class="lineno"> 9 </span><span class="n">page</span><span class="o">.</span><span class="n">data</span><span class="s1">&#39;%PageIndex</span>
+<span class="lineno">10 </span><span class="n">f</span> <span class="o">=</span> <span class="nb">file</span><span class="p">(</span><span class="n">reviewfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="lineno">11 </span><span class="n">p1</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="c1"># dump the object to a file f.close()</span>
+<span class="lineno">12 </span><span class="k">print</span> <span class="s1">&#39;finished page:</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">PageIndex</span>
+<span class="lineno">13 </span><span class="k">except</span><span class="p">:</span>
+<span class="lineno">14 </span><span class="k">print</span> <span class="s1">&#39;!!!!!!!!!!!!!!!!!!!!!!!!failed for </span><span class="si">%d</span><span class="s1"> page&#39;</span><span class="o">%</span><span class="n">PageIndex</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-13">
+          <div class="inner">
+            
+            <header><h1>读取数据</h1></header>
+            
+            
+            <section><h3>读取存储的网页</h3>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="n">reviewfile</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\ratemyprofessor-product-review-1901092-page.data’ f = file(reviewfile)</span>
+<span class="lineno">2 </span><span class="n">soup</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="lineno">3 </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="lineno">4 </span><span class="k">def</span> <span class="nf">LoadCachedPage</span><span class="p">(</span><span class="n">PageIndex</span><span class="p">):</span>
+<span class="lineno">5 </span><span class="n">reviewfile</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:\ratemyprofessor-product-review-1901092-page.data’ f = file(reviewfile)</span>
+<span class="lineno">6 </span><span class="n">soup</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="lineno">7 </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="lineno">8 </span><span class="k">return</span> <span class="n">soup</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-14">
+          <div class="inner">
+            
+            <header><h1>提取数据</h1></header>
+            
+            
+            <section><h3>正则表达式:re</h3>
+<h3>python内置模块</h3>
+<h3>更方便的选择:BeautifulSoup</h3>
+<h3>将爬取的网页内容自动解析成树形文件，便于查看和处理</h3></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-15">
+          <div class="inner">
+            
+            <header><h1>提取数据</h1></header>
+            
+            
+            <section><h3>正则表达式</h3>
+<pre><code>！python
+Import re
+&lt;div class="table-toggle rating-count active" data- table="rating-filter"&gt;
+7 Student Ratings &lt;/div&gt;
+
+!python
+import re
+pattern = re.compile(r'&lt;div.*?class="table-toggle rating- count active" .*? &gt;(.*?)&lt;/div&gt;', re.S)
+Num_students= pattern.findall(html)
+</code></pre></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-16">
+          <div class="inner">
+            
+            <header><h1>提取数据</h1></header>
+            
+            
+            <section><p><strong>BeautifulSoup安装</strong>
+<strong>下载安装包进行安装</strong>
+https://pypi.org/project/beautifulsoup4/ pip install BeautifulSoup4</p>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="n">Python</span> <span class="o">&gt;&gt;&gt;</span><span class="n">Import</span> <span class="n">bs4</span>
+<span class="lineno">2 </span><span class="n">Pip</span> <span class="nb">list</span>
+</pre></div>
+
+<h1>提取数据</h1>
+<p>使用beautifulsoup http://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/</p>
+<p>from bs4 import BeautifulSoup
+soupParsed = BeautifulSoup(html)
+Schoolname = soupParsed.find("h2",{"class":"schoolname"}).text Num_students = soupParsed.find("div", {"class":"table-toggle rating-count active"}).text</p>
+<h1>提取数据</h1>
+<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="k">def</span> <span class="nf">getNames</span><span class="p">(</span><span class="n">soup</span><span class="p">):</span>
+<span class="lineno"> 2 </span><span class="n">soupParsed</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="lineno"> 3 </span><span class="n">active</span><span class="s2">&quot;})</span>
+<span class="lineno"> 4 </span><span class="n">Num_students</span> <span class="o">=</span> <span class="n">soupParsed</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;table-toggle rating-count</span>
+<span class="lineno"> 5 </span><span class="k">if</span> <span class="n">Num_students</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="n">Num_students</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="lineno"> 6 </span><span class="k">else</span><span class="p">:</span>
+<span class="lineno"> 7 </span><span class="n">Num_students</span> <span class="o">=</span> <span class="n">Num_students</span> <span class="o">.</span><span class="n">text</span><span class="p">[:</span><span class="o">-</span><span class="mi">16</span><span class="p">]</span> <span class="n">Schoolname</span> <span class="o">=</span> <span class="n">soupParsed</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">,{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;schoolname&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">text</span>
+<span class="lineno"> 8 </span><span class="k">if</span> <span class="n">Schoolname</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span> <span class="n">Schoolname</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="lineno"> 9 </span><span class="k">else</span><span class="p">:</span>
+<span class="lineno">10 </span><span class="k">return</span> <span class="n">Num_students</span><span class="p">,</span> <span class="n">Schoolname</span>
+<span class="lineno">11 </span><span class="n">Schoolname</span> <span class="o">=</span> <span class="n">soupParsed</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">,{</span><span class="s2">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;schoolname&quot;</span><span class="p">})</span>
+</pre></div>
+
+<h1>存储数据</h1>
+<h3>存储从网页中提取的数据</h3>
+<div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="n">datanames</span> <span class="o">=</span> <span class="p">[</span><span class="err">‘</span><span class="n">Schoolname</span><span class="err">’</span><span class="p">,</span><span class="err">’</span><span class="n">Num_students</span><span class="err">’</span><span class="p">]</span> 
+<span class="lineno"> 2 </span><span class="n">datafiletxt</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="err">‘</span><span class="n">RateMyprofessor_data</span><span class="o">.</span><span class="n">txt</span><span class="err">’</span><span class="p">,</span><span class="err">’</span><span class="n">a</span><span class="err">’</span><span class="p">)</span> 
+<span class="lineno"> 3 </span>  <span class="k">for</span> <span class="n">names</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">datanames</span><span class="p">)):</span>
+<span class="lineno"> 4 </span><span class="n">datafiletxt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">datanames</span><span class="p">[</span><span class="n">names</span><span class="p">])</span><span class="o">+</span> <span class="err">‘</span>\<span class="n">t</span><span class="err">’</span><span class="p">)</span> <span class="n">datafiletxt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">’)</span>
+<span class="lineno"> 5 </span>
+<span class="lineno"> 6 </span><span class="k">def</span> <span class="nf">Data_save</span><span class="p">(</span><span class="n">content</span><span class="p">,</span><span class="n">filename</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="err">‘</span><span class="n">a</span><span class="err">’</span><span class="p">):</span> 
+<span class="lineno"> 7 </span>          <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="n">mode</span><span class="p">)</span>
+<span class="lineno"> 8 </span>          <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="p">)):</span> 
+<span class="lineno"> 9 </span>          <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">content</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="err">’</span>\<span class="n">t</span><span class="err">’</span><span class="p">)</span>
+<span class="lineno">10 </span>          <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="err">‘</span>\<span class="n">n</span><span class="err">’</span><span class="p">)</span> <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+<h1>爬取大量网页</h1>
+<h2>爬取存储网页</h2>
+<p>for PageIndex in range(1901080,1901093): 
+              CrawlPage(PageIndex)
+              soup = LoadCachedPage(PageIndex)
+              datalist = getNames(soup) 
+              Data_save(datanames,’RateMyprofessor_data.txt’)</p>
+<h1>总结</h1>
+<p><strong>爬取存储网页</strong>: CrawlPage(PageIndex) 
+<strong>读取提取数据</strong>: LoadCachedPage(PageIndex)
+                GetNames(soup)
+<strong>存储提取数据</strong>: Data_save(content,filename,mode='a')</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-17">
+          <div class="inner">
+            
+            <header><h1>第二节</h1></header>
+            
+            
+            <section><h2>大数据可视化/商业智能</h2>
+<h2>Microsoft Power BI</h2>
+<h3>Dr. Jibo He</h3>
+<h3>清华大学社科学院心理学系</h3></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-18">
+          <div class="inner">
+            
+            <header><h1>第三节</h1></header>
+            
+            
+            <section><h1>大数据分析，自然语言处理与机器学习</h1>
+<h3>Dr. Jibo He</h3>
+<h3>清华大学社科学院心理学系</h3></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-19">
+          <div class="inner">
+            
+            <header><h1>Install all required packages</h1></header>
+            
+            
+            <section><p>■ #bacth installer for python for big data lecture
+■ pip install numpy
+■ pip install pandas
+■ pip install seaborn
+■ pip install matplotlib
+■ pip install nltk
+■ pip install sklearn
+■ pip install wordcloud ■
+ #natural language processing for the Chinese language 
+■ pip install jieba</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-20">
+          <div class="inner">
+            
+            <header><h1>Configure nltk and its data</h1></header>
+            
+            
+            <section><p>■ #https://www.jianshu.com/p/ab7564be5a2b
+■ #https://www.cnblogs.com/webRobot/p/6065831.html
+■ #stopwords (irrelavent words)
+■ import nltk
+■ #nltk.download("stopwords")
+■ from nltk.corpus import stopwords
+■ text = "i like eat delicious food that s i m cooking food myself case best foods helps lot also best before shelf life "
+■ text=nltk.word_tokenize(text) #separate all words
+■ print(text) ■</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-21">
+          <div class="inner">
+            
+            <header><h1>Configure nltk and its data</h1></header>
+            
+            
+            <section><p>■ Resource punkt not found.
+■ Please use the NLTK Downloader to obtain the resource:
+■ &gt;&gt;&gt; import nltk
+■ &gt;&gt;&gt; nltk.download('punkt') 
+■ For more information see: https://www.nltk.org/data.html
+■ Attempted to load tokenizers/punkt/english.pickle</p>
+<p><img alt="python" src="file:///Users/shelia/Desktop/big data slides/pic10.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-22">
+          <div class="inner">
+            
+            <header><h1>Step 1. List all the files</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> <span class="c1"># linear algebra</span>
+<span class="lineno">2 </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span> <span class="c1"># data processing, CSV file I/O (e.g. pd.read_csv) import matplotlib.pyplot as plt</span>
+<span class="lineno">3 </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="lineno">4 </span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;./input data&quot;</span><span class="p">))</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-23">
+          <div class="inner">
+            
+            <header><h1>Step 2. Read the review data</h1></header>
+            
+            
+            <section><p>data=pd.read_csv("./input data/googleplaystore_user_reviews.csv",encoding="latin1") data.head()
+  <a href="pic9.jpg">!python</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-24">
+          <div class="inner">
+            
+            <header><h1>Step 3. Select reviews and types of reviews</h1></header>
+            
+            
+            <section><p>■ df=pd.concat([data.Translated_Review,data.Sentiment],axis=1) 
+■ df.dropna(axis=0,inplace=True)
+■ df.head(10)
+■ print(df.Sentiment.value_counts())</p>
+<p><img alt="python" src="file:///Users/shelia/Desktop/big data slides/pic8.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-25">
+          <div class="inner">
+            
+            <header><h1>Step 4. Converting review types to int</h1></header>
+            
+            
+            <section><p>■ Converting review types to int form in order to use classification methods.
+■ 0= Positive, 1=Negative, 2= Neutral</p>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="n">df</span><span class="o">.</span><span class="n">Sentiment</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span> <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="s2">&quot;Positive&quot;</span> <span class="k">else</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">i</span><span class="o">==</span> <span class="s2">&quot;Negative&quot;</span> <span class="k">else</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">Sentiment</span><span class="p">]</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-26">
+          <div class="inner">
+            
+            <header><h1>Step 5. text data cleaning</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="c1">#Data cleaning</span>
+<span class="lineno">2 </span><span class="kn">import</span> <span class="nn">re</span>
+<span class="lineno">3 </span><span class="n">first_text</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">Translated_Review</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="lineno">4 </span><span class="n">text</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[^a-zA-Z]&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="n">first_text</span><span class="p">)</span> <span class="c1">#changing characters with space text=text.lower()</span>
+<span class="lineno">5 </span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">Translated_Review</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#lets review of changings</span>
+<span class="lineno">6 </span><span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+<p><img alt="python" src="file:///Users/shelia/Desktop/big data slides/pic7.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-27">
+          <div class="inner">
+            
+            <header><h1>Step 6. Stop word removal</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="c1">#stopwords (irrelavent words)</span>
+<span class="lineno">2 </span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="lineno">3 </span><span class="c1">#nltk.download(&quot;stopwords&quot;) #nltk.download(&quot;punkt&quot;)</span>
+<span class="lineno">4 </span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span> <span class="n">text</span><span class="o">=</span><span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="c1">#separate all words print(text)</span>
+</pre></div>
+
+<p><img alt="python" src="file:///Users/shelia/Desktop/big data slides/pic6.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              27/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-28">
+          <div class="inner">
+            
+            <header><h1>Step 7.1. word lemmatization</h1></header>
+            
+            
+            <section><p>What is lemmatization??? With lemmatization we can convert words to their root format.
+For instance books---&gt;book</p>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="kn">import</span> <span class="nn">nltk</span> <span class="kn">as</span> <span class="nn">nlp</span> <span class="nn">lemma</span><span class="o">=</span><span class="n">nlp</span><span class="o">.</span><span class="n">WordNet</span>
+<span class="lineno">2 </span><span class="n">Lemmatizer</span><span class="p">()</span> 
+<span class="lineno">3 </span><span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="n">lemma</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">text</span><span class="p">]</span> 
+<span class="lineno">4 </span><span class="n">text</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="lineno">5 </span><span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+<p><img alt="python" src="file:///Users/shelia/Desktop/big data slides/pic5.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              28/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-29">
+          <div class="inner">
+            
+            <header><h1>Step 7.2. word lemmatization</h1></header>
+            
+            
+            <section><p><strong>Lemmatization all review texts</strong></p>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="n">text_list</span><span class="o">=</span><span class="p">[]</span>
+<span class="lineno">2 </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">Translated_Review</span><span class="p">:</span>
+<span class="lineno">3 </span><span class="n">text</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;[^a-zA-Z]&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="n">text</span><span class="o">=</span><span class="n">nltk</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="n">lemma</span><span class="o">=</span><span class="n">nlp</span><span class="o">.</span><span class="n">WordNetLemmatizer</span><span class="p">()</span>
+<span class="lineno">4 </span><span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="n">lemma</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="p">]</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="lineno">5 </span><span class="n">text_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              29/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-30">
+          <div class="inner">
+            
+            <header><h1>Step 8. Bag of words algorithm</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="c1">#bag of words</span>
+<span class="lineno">2 </span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span>
+<span class="lineno">3 </span><span class="kn">import</span> <span class="nn">CountVectorizer</span>
+<span class="lineno">4 </span><span class="n">max_features</span><span class="o">=</span><span class="mi">200000</span> <span class="n">cou_vec</span><span class="o">=</span><span class="n">CountVectorizer</span><span class="p">(</span><span class="n">max_features</span><span class="o">=</span><span class="n">max_features</span><span class="p">,</span><span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">)</span> <span class="n">sparce_matrix</span><span class="o">=</span><span class="n">cou_vec</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">text_list</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span> <span class="n">all_words</span><span class="o">=</span><span class="n">cou_vec</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
+<span class="lineno">5 </span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Most used words: &quot;</span><span class="p">,</span><span class="n">all_words</span><span class="p">[</span><span class="mi">50</span><span class="p">:</span><span class="mi">100</span><span class="p">])</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              30/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-31">
+          <div class="inner">
+            
+            <header><h1>Step 9. Visualize using wordcloud</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span>
+<span class="lineno">2 </span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span> <span class="n">wordcloud</span><span class="o">=</span><span class="n">WordCloud</span><span class="p">(</span><span class="n">background_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">768</span><span class="p">)</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">all_words</span><span class="p">[</span><span class="mi">100</span><span class="p">:]))</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">wordcloud</span><span class="p">)</span>
+<span class="lineno">3 </span><span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="lineno">4 </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              31/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-32">
+          <div class="inner">
+            
+            <header><h1>Step 10. Machine learning (Part 1): split data</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="c1">#classification</span>
+<span class="lineno">2 </span><span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="lineno">3 </span><span class="n">x</span><span class="o">=</span><span class="n">sparce_matrix</span>
+<span class="lineno">4 </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span>
+<span class="lineno">5 </span><span class="kn">import</span> <span class="nn">train_test_split</span> <span class="nn">x_train</span><span class="o">,</span><span class="nn">x_test</span><span class="o">,</span><span class="nn">y_train</span><span class="o">,</span><span class="nn">y_test</span><span class="o">=</span><span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              32/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-33">
+          <div class="inner">
+            
+            <header><h1>Step 10. Machine learning (Part 2): Random Forest algorithm</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="c1">#Random Forest</span>
+<span class="lineno">2 </span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="lineno">3 </span><span class="n">rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span> <span class="n">rf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="lineno">4 </span><span class="k">print</span><span class="p">(</span><span class="s2">&quot;accuracy: &quot;</span><span class="p">,</span><span class="n">rf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">))</span>
+</pre></div>
+
+<p><img alt="python" src="file:///Users/shelia/Desktop/big data slides/pic4.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              33/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-34">
+          <div class="inner">
+            
+            <header><h2>Step 10. Machine learning (Part 3): Confusion matrix</h2></header>
+            
+            
+            <section><div class="highlight"><pre><span></span><span class="lineno"> 1 </span><span class="n">y_pred</span><span class="o">=</span><span class="n">rf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="lineno"> 2 </span><span class="n">y_true</span><span class="o">=</span><span class="n">y_test</span>
+<span class="lineno"> 3 </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="lineno"> 4 </span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+<span class="lineno"> 5 </span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Positive&quot;</span><span class="p">,</span><span class="s2">&quot;Negative&quot;</span><span class="p">,</span><span class="s2">&quot;Neutral&quot;</span><span class="p">]</span> <span class="n">cm</span><span class="o">=</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span><span class="n">y_pred</span><span class="p">)</span>
+<span class="lineno"> 6 </span><span class="n">f</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span><span class="n">linecolor</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.0f&quot;</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;y_pred&quot;</span><span class="p">)</span>
+<span class="lineno"> 7 </span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;y_true&quot;</span><span class="p">)</span>
+<span class="lineno"> 8 </span><span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="lineno"> 9 </span><span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="lineno">10 </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+<p><img alt="python" src="file:///Users/shelia/Desktop/big data slides/pic2.jpg" /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              34/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-35">
+          <div class="inner">
+            
+            <header><h1>Potential issues: MemoryError</h1></header>
+            
+            
+            <section><p>!python</p>
+<p>■ Traceback (most recent call last):</p>
+<p>■ File "c:/Users/Researcher/Desktop/Course/工程心理学专题/Big Data大数据研究/Google Store App Rating User Experience/TextProcessingNLP.py", line 89, in <module></p>
+<p>■ x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)</p>
+<p>■ File"C:\Users\Researcher\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\sklearn\model_selection_split.py", line 2154, in train_test_split</p>
+<p>■ return list(chain.from_iterable((_safe_indexing(a, train),</p>
+<p>■ File"C:\Users\Researcher\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\sklearn\model_selection_split.py", line 2154, in <genexpr></p>
+<p>■ return list(chain.from_iterable((_safe_indexing(a, train),</p>
+<p>■ File"C:\Users\Researcher\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\sklearn\utils__init__.py", line 395, in _safe_indexing</p>
+<p>■ return _array_indexing(X, indices, indices_dtype, axis=axis)</p>
+<p>■ File "C:\Users\Researcher\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\sklearn\utils__init__.py", line 181, in _array_indexing</p>
+<p>■ return array[key] if axis == 0 else array[:, key]</p>
+<p>■ <strong>MemoryError: Unable to allocate 3.88 GiB for an array with shape (29941, 17404) and data type int64</strong></p>
+<p>■ PS C:\Users\Researcher\Desktop\Course\工程心理学专题\Big Data大数据研究\Google Store App Rating User Experience&gt;</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              35/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: lecture8-big data(1).md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-36">
+          <div class="inner">
+            
+            <header><h1>Potential issues: MemoryError</h1></header>
+            
+            
+            <section><h2><strong>■ MemoryError: Unable to allocate 3.88 GiB for an array with shape (29941, 17404) and data type</strong></h2>
+<h2><img alt="python" src="file:///Users/shelia/Desktop/big data slides/pic3.jpg" /></h2></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="lecture8-big data(1).md">lecture8-big data(1).md</a>
+            </aside>
+            
+            <aside class="page_number">
+              36/36
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">PYTHON爬虫、大数据处理与商业智能</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">框架</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">第一节 Python 网络爬虫</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">网络爬虫</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">网络通信</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">下载一个网页</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">模拟浏览器</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">数据保存</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">爬取ratemyprofessor</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">获得网页</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">获得网页</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">获得网页</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">读取数据</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">提取数据</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">提取数据</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">提取数据</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">第二节</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">第三节</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">Install all required packages</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Configure nltk and its data</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">Configure nltk and its data</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Step 1. List all the files</a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Step 2. Read the review data</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Step 3. Select reviews and types of reviews</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">Step 4. Converting review types to int</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">Step 5. text data cleaning</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">Step 6. Stop word removal</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Step 7.1. word lemmatization</a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-29">
+        <th><a href="#slide29">Step 7.2. word lemmatization</a></th>
+        <td><a href="#slide29">29</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-30">
+        <th><a href="#slide30">Step 8. Bag of words algorithm</a></th>
+        <td><a href="#slide30">30</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-31">
+        <th><a href="#slide31">Step 9. Visualize using wordcloud</a></th>
+        <td><a href="#slide31">31</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-32">
+        <th><a href="#slide32">Step 10. Machine learning (Part 1): split data</a></th>
+        <td><a href="#slide32">32</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-33">
+        <th><a href="#slide33">Step 10. Machine learning (Part 2): Random Forest algorithm</a></th>
+        <td><a href="#slide33">33</a></td>
+      </tr>
+      
+        
+        <tr id="toc-row-34" class="sub">
+          <th><a href="#slide34">Step 10. Machine learning (Part 3): Confusion matrix</a></th>
+          <td><a href="#slide34">34</a></td>
+        </tr>
+        
+      
+      
+      <tr id="toc-row-35">
+        <th><a href="#slide35">Potential issues: MemoryError</a></th>
+        <td><a href="#slide35">35</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-36">
+        <th><a href="#slide36">Potential issues: MemoryError</a></th>
+        <td><a href="#slide36">36</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
