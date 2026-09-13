@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>设计规范 Style Guide｜Mouseion 慕识书院 网站</title>
+<meta name="description" content="慕识书院网站设计规范示意：基于《慕识书院品牌指导手册》的品牌色彩、专用字形、标识使用、组件与响应式栅格、无障碍要点。">
+<meta name="theme-color" content="#221814">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  /* 仅本页使用的规范展示样式 */
+  .swatch {
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    overflow: hidden;
+    background: #fff;
+  }
+  .swatch__chip { height: 84px; }
+  .swatch__meta { padding: 12px 14px; font-size: 0.8125rem; line-height: 1.6; }
+  .swatch__meta b { display: block; font-size: 0.875rem; }
+  .swatch__meta code { font-size: 0.8125rem; color: var(--ink-2); }
+  .scale { display: grid; gap: 14px; }
+  .scale__row { display: grid; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid var(--line-2); }
+  .scale__tag { font-family: var(--font-disp); font-size: 0.75rem; letter-spacing: 0.14em; color: var(--bronze-ink); }
+  .logo-box { display: grid; place-items: center; min-height: 130px; border-radius: var(--r-md); padding: 20px; }
+  .logo-box--paper { background: var(--paper-2); }
+  .logo-box--ink { background: var(--ink); }
+  .logo-box img { max-height: 34px; width: auto; }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">跳到主要内容</a>
+
+<div class="topbar">
+  <div class="wrap topbar__inner">
+    <div class="topbar__meta">
+      <span class="topbar__item">Mouseion 慕识书院 · 网站设计规范示意</span>
+    </div>
+    <div class="topbar__meta only-desktop">
+      <span class="topbar__item">色彩与字形取自《慕识书院品牌指导手册》（welldesign，2021）</span>
+    </div>
+  </div>
+</div>
+
+<header class="siteheader">
+  <div class="wrap siteheader__inner">
+    <a class="brand" href="index.html" aria-label="Mouseion 慕识书院 首页">
+      <img src="assets/img/logo.png" alt="Mouseion 慕识书院" width="742" height="123">
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="index.html">首页</a></li>
+        <li><a class="nav__link" href="pathway.html">成长路径</a></li>
+        <li><a class="nav__link" href="workshop.html">阅读工坊</a></li>
+        <li><a class="nav__link" href="assessment.html">阅读测评</a></li>
+        <li><a class="nav__link" href="space.html">空间与荣誉</a></li>
+        <li><a class="nav__link" href="activities.html">活动与社区</a></li>
+        <li><a class="nav__link" href="about.html">关于慕识</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--gold btn--sm siteheader__cta" href="visit.html">预约首次到访</a>
+    <button class="navtoggle" type="button" aria-expanded="false" aria-controls="drawer" aria-label="打开菜单"><span></span></button>
+  </div>
+</header>
+
+<nav id="drawer" class="drawer" aria-label="移动端导航">
+  <a class="drawer__link" href="index.html">首页</a>
+  <a class="drawer__link" href="pathway.html">成长路径</a>
+  <a class="drawer__link" href="workshop.html">阅读工坊</a>
+  <a class="drawer__link" href="assessment.html">阅读测评</a>
+  <a class="drawer__link" href="space.html">空间与荣誉</a>
+  <a class="drawer__link" href="activities.html">活动与社区</a>
+  <a class="drawer__link" href="about.html">关于慕识</a>
+  <div class="drawer__foot">
+    <a class="btn btn--gold btn--block" href="visit.html">预约首次到访</a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="index.html">首页</a><span aria-hidden="true">/</span><span>设计规范</span>
+      </nav>
+      <div class="pagehead__inner">
+        <p class="eyebrow" style="margin-top: 18px;">Style Guide</p>
+        <h1 class="display">网站设计规范</h1>
+        <p class="lead">
+          本页汇总本次网站界面设计使用的色彩、字形、组件与响应式规则，
+          便于后续内容更新与前端开发保持一致。色彩与字形均来自慕识书院品牌资产。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 色彩 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">01 Colour</p>
+        <h2 class="h2">品牌色彩</h2>
+        <p class="lead">
+          品牌标识主色为 Pantone BLACK 6C；辅助色系与专色系用于信息层级与领域区分。
+          参考色值来自品牌指导手册的色彩规范页。
+        </p>
+      </div>
+
+      <h3 class="h3 reveal" style="margin-bottom: 16px;">主色与墨色</h3>
+      <div class="grid grid--4 reveal" style="margin-bottom: var(--gap);">
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#221814"></div>
+          <div class="swatch__meta"><b>品牌墨黑</b>PANTONE BLACK 6C<br><code>#221814</code><br>C0 M0 Y0 K100</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#244c5c"></div>
+          <div class="swatch__meta"><b>深板岩蓝</b>页面主对比色<br><code>#244C5C</code><br>取自成长路径海报主色</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#c9a865"></div>
+          <div class="swatch__meta"><b>古铜金</b>PANTONE 7562 C<br><code>#C9A865</code><br>C25 M35 Y65 K0</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#f4c404"></div>
+          <div class="swatch__meta"><b>品牌金</b>PANTONE 7406 C<br><code>#F4C404</code><br>主行动色 / 强调色</div>
+        </div>
+      </div>
+
+      <h3 class="h3 reveal" style="margin-bottom: 16px;">四大阅读领域色</h3>
+      <div class="grid grid--4 reveal" style="margin-bottom: var(--gap);">
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#00bc74"></div>
+          <div class="swatch__meta"><b>自然科学</b>PANTONE 7480 C<br><code>#00BC74</code></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#f4c404"></div>
+          <div class="swatch__meta"><b>生命科学</b>PANTONE 7406 C<br><code>#F4C404</code></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#3d8cdc"></div>
+          <div class="swatch__meta"><b>社会科学</b>PANTONE 279 C<br><code>#3D8CDC</code></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#fc6c34"></div>
+          <div class="swatch__meta"><b>人文与艺术</b>PANTONE 1645 C<br><code>#FC6C34</code></div>
+        </div>
+      </div>
+
+      <h3 class="h3 reveal" style="margin-bottom: 16px;">辅助色与中性色</h3>
+      <div class="grid grid--4 reveal">
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#fbcf00"></div>
+          <div class="swatch__meta"><b>辅助黄</b><code>#FBCF00</code><br>C7 M23 Y89 K0</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#f4db8c"></div>
+          <div class="swatch__meta"><b>浅金</b><code>#F4DB8C</code><br>C9 M16 Y52 K0</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#f8eaa3"></div>
+          <div class="swatch__meta"><b>淡金</b><code>#F8EAA3</code><br>C7 M9 Y44 K0</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#c3cbd0"></div>
+          <div class="swatch__meta"><b>冷灰蓝</b><code>#C3CBD0</code><br>C29 M17 Y16 K0</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#fbfbf7"></div>
+          <div class="swatch__meta"><b>纸白</b>页面底色<br><code>#FBFBF7</code></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#f4f4ec"></div>
+          <div class="swatch__meta"><b>米白</b>分区底色<br><code>#F4F4EC</code></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#6f665e"></div>
+          <div class="swatch__meta"><b>次级文字</b><code>#6F665E</code></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__chip" style="background:#e4e1d6"></div>
+          <div class="swatch__meta"><b>描边</b><code>#E4E1D6</code></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 字体 -->
+  <section class="section section--tint">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">02 Typography</p>
+        <h2 class="h2" style="margin-top: 12px;">专用字形</h2>
+        <p class="lead" style="margin-top: 16px;">
+          品牌手册规定：中文使用 HarmonyOS Sans SC，英文使用 Futura Condensed Medium；
+          整体简洁的笔画造型与无装饰感的字形符合品牌“柔性、自然、温暖”的调性。
+        </p>
+        <div class="card" style="margin-top: 22px;">
+          <h3 class="card__title">字体栈</h3>
+          <p class="small muted mono-en" style="margin-top: 4px;">
+            CN: HarmonyOS Sans SC → PingFang SC → Hiragino Sans GB → Noto Sans SC<br>
+            EN: Futura Condensed Medium → Futura → Avenir Next Condensed
+          </p>
+          <p class="small muted" style="margin-top: 8px;">
+            不使用外部字体 CDN：优先调用系统已有字体，保证在境内网络下也能一次性渲染完成。
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="scale">
+          <div class="scale__row">
+            <span class="scale__tag">Display / clamp(2.05–3.6rem)</span>
+            <p class="display" style="font-size: clamp(2rem, 1.2rem + 3.6vw, 3rem);">从被陪伴阅读，到独立思考</p>
+          </div>
+          <div class="scale__row">
+            <span class="scale__tag">H2 / clamp(1.5–2.3rem)</span>
+            <p class="h2">八个阶段，一条看得见的成长路径</p>
+          </div>
+          <div class="scale__row">
+            <span class="scale__tag">H3 / clamp(1.12–1.375rem)</span>
+            <p class="h3">主题共读 II · 拼读桥梁</p>
+          </div>
+          <div class="scale__row">
+            <span class="scale__tag">Lead / 1–1.15rem · 行高 1.85</span>
+            <p class="lead">年龄是建议区间；真正的起点由阅读表现、学习状态与作品样本共同决定。</p>
+          </div>
+          <div class="scale__row">
+            <span class="scale__tag">Body / 0.95–1.06rem · 行高 1.78</span>
+            <p>每一阶段都同时推进阅读、思考与表达，成果以可观察证据呈现。</p>
+          </div>
+          <div class="scale__row" style="border-bottom: 0; padding-bottom: 0;">
+            <span class="scale__tag">Eyebrow / Futura · 0.78rem · 字距 .2em</span>
+            <p class="eyebrow" style="margin-top: 6px;">Reading Workshop</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 标识 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">03 Identity</p>
+        <h2 class="h2">标识使用</h2>
+        <p class="lead">
+          品牌标识有横版与竖版组合。浅色底使用全彩（墨黑）标识，深色底使用反白标识；
+          周边保留不小于“x”的安全空间，不做拉伸、描边、换色处理。
+        </p>
+      </div>
+      <div class="grid grid--2 reveal">
+        <div class="card">
+          <div class="logo-box logo-box--paper"><img src="assets/img/logo.png" alt="Mouseion 慕识书院 标准标识"></div>
+          <p class="small muted" style="margin-top: 14px;">浅色底：使用全彩标识。文件 <code>assets/img/logo.png</code>（透明底）。</p>
+        </div>
+        <div class="card">
+          <div class="logo-box logo-box--ink"><img src="assets/img/logo-light.png" alt="Mouseion 慕识书院 反白标识"></div>
+          <p class="small muted" style="margin-top: 14px;">深色底：使用反白标识。文件 <code>assets/img/logo-light.png</code>（透明底）。</p>
+        </div>
+      </div>
+      <div class="notice reveal" style="margin-top: var(--gap);">
+        <span aria-hidden="true">✦</span>
+        <span>
+          矢量原文件请使用品牌手册中的电子原图（.ai / .eps）。本页位图由品牌素材导出，
+          正式上线建议替换为矢量 SVG，以获得任意尺寸下的清晰度。
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 组件 -->
+  <section class="section section--tint">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">04 Components</p>
+        <h2 class="h2">组件</h2>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card reveal">
+          <h3 class="card__title">按钮</h3>
+          <div class="btn-row" style="margin-top: 6px;">
+            <button class="btn btn--gold" type="button">主要行动</button>
+            <button class="btn btn--slate" type="button">次级行动</button>
+            <button class="btn btn--ghost" type="button">弱化行动</button>
+            <button class="btn btn--gold btn--sm" type="button">小号</button>
+          </div>
+          <p class="small muted" style="margin-top: 10px;">
+            最小点击高度 48px（小号 40px）；圆角全圆；悬停上移 2px；键盘焦点使用 3px 描边。
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="card__title">标签与徽章</h3>
+          <div class="chiprow" style="margin-top: 6px;">
+            <span class="chip">默认标签</span>
+            <span class="chip chip--gold">强调标签</span>
+            <span class="chip">2–12 岁</span>
+          </div>
+          <p class="small muted" style="margin-top: 10px;">标签不用于按钮；可横向滚动以避免换行挤压。</p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="card__title">卡片</h3>
+          <p class="card__body-text">
+            白底、1px 描边、圆角 26px、内距随视口缩放。悬停时上移 3px 并出现阴影；
+            顶部强调卡（<code>card--accent</code>）用 3px 品牌金内描边标示层级。
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="card__title">表单</h3>
+          <div class="field" style="margin-top: 6px;">
+            <label for="demo-input">示例输入</label>
+            <input id="demo-input" type="text" placeholder="占位提示">
+            <p class="field__hint">说明文字使用 0.8125rem 次级色。</p>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="card__title">手风琴（FAQ）</h3>
+          <div class="accordion" style="margin-top: 6px;">
+            <details class="acc" open>
+              <summary class="acc__q">示例问题，默认展开</summary>
+              <div class="acc__a"><p>使用原生 details / summary 实现，无 JS 也可展开。</p></div>
+            </details>
+            <details class="acc">
+              <summary class="acc__q">示例问题，默认收起</summary>
+              <div class="acc__a"><p>展开箭头由 CSS 绘制。</p></div>
+            </details>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <h3 class="card__title">数据与步骤</h3>
+          <div class="stats" style="border-radius: var(--r-md);">
+            <div class="stat"><div class="stat__num">M0–M7</div><div class="stat__label">八个阶段</div></div>
+            <div class="stat"><div class="stat__num">20,000<sup>+</sup></div><div class="stat__label">册馆藏</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 响应式 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">05 Responsive</p>
+        <h2 class="h2">响应式规则</h2>
+        <p class="lead">
+          移动优先：基础样式面向手机，逐级向上增强。字号与间距全部使用 clamp() 流式缩放，
+          因此从 320px 到 1920px 之间不需要“跳变”的中间状态。
+        </p>
+      </div>
+
+      <div class="tablewrap reveal">
+        <table class="data">
+          <caption>断点与布局变化</caption>
+          <thead>
+            <tr><th scope="col">断点</th><th scope="col">设备</th><th scope="col">布局变化</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>默认</b></td>
+              <td>手机 320–639px</td>
+              <td>单列；导航收进抽屉；底部固定行动条（电话 + 预约）；表格可横向滑动；卡组 2 列或 1 列。</td>
+            </tr>
+            <tr>
+              <td><b>≥ 640px</b></td>
+              <td>大屏手机 / 平板竖屏</td>
+              <td>数据条 4 列；图集 3 列（首图放大占 2×2）；表单两列；多列卡组 3 列；步骤 2 列。</td>
+            </tr>
+            <tr>
+              <td><b>≥ 900px</b></td>
+              <td>平板横屏 / 小笔记本</td>
+              <td>顶部导航展开、隐藏汉堡与底部行动条；Hero 与内容区变两栏；侧栏吸顶；路径卡 4 列。</td>
+            </tr>
+            <tr>
+              <td><b>≥ 1200px</b></td>
+              <td>桌面</td>
+              <td>导航间距放大；页脚 4 栏；内容最大宽度收在 1220px，保证行长舒适。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid grid--4 reveal" style="margin-top: var(--gap);">
+        <div class="card">
+          <h3 class="card__title">栅格</h3>
+          <p class="card__body-text">卡组使用 <code>auto-fit + minmax(min(100%, 250px), 1fr)</code>，容器变窄时自动减少列数，不会出现内容溢出。</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">图片</h3>
+          <p class="card__body-text">统一由 <code>aspect-ratio</code> 固定比例 + <code>object-fit: cover</code>，非首屏图片使用 <code>loading="lazy"</code>。</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">表格</h3>
+          <p class="card__body-text">宽表在窄屏横向滚动，表头不换行；同时在表格上方提示可左右滑动。</p>
+        </div>
+        <div class="card">
+          <h3 class="card__title">触控</h3>
+          <p class="card__body-text">可点击元素最小 44×44px；移动端抽屉与底部行动条计入 <code>env(safe-area-inset-bottom)</code>。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 无障碍 -->
+  <section class="section section--dark">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">06 Accessibility</p>
+        <h2 class="h2">无障碍与降级</h2>
+      </div>
+      <div class="grid grid--4">
+        <div class="card card--dark reveal">
+          <h3 class="card__title">对比度</h3>
+          <p class="card__body-text">正文文字控制在 4.5:1 以上；品牌金与古铜金仅用于大字号或图形，不用于小号正文。</p>
+        </div>
+        <div class="card card--dark reveal">
+          <h3 class="card__title">键盘可达</h3>
+          <p class="card__body-text">提供“跳到主要内容”链接；标签页支持 ← → / Home / End；抽屉与灯箱可用 Esc 关闭。</p>
+        </div>
+        <div class="card card--dark reveal">
+          <h3 class="card__title">动效降级</h3>
+          <p class="card__body-text">尊重 <code>prefers-reduced-motion</code>：关闭滚动入场与位移过渡，保留内容呈现。</p>
+        </div>
+        <div class="card card--dark reveal">
+          <h3 class="card__title">无脚本可用</h3>
+          <p class="card__body-text">FAQ 使用原生 details；成长路径首个阶段默认展示；所有内容不依赖 JS 获取。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 文件结构 -->
+  <section class="section">
+    <div class="wrap wrap--narrow">
+      <div class="section__head reveal">
+        <p class="eyebrow">07 Files</p>
+        <h2 class="h2">文件结构</h2>
+      </div>
+      <div class="card reveal">
+        <ul class="stage__meta">
+          <li><b>index.html</b><span>首页</span></li>
+          <li><b>pathway.html</b><span>成长路径 M0–M7（含书塔交互）</span></li>
+          <li><b>workshop.html</b><span>阅读工坊与课程</span></li>
+          <li><b>assessment.html</b><span>阅读能力评估与阅读计划</span></li>
+          <li><b>space.html</b><span>空间与荣誉</span></li>
+          <li><b>activities.html</b><span>活动与社区</span></li>
+          <li><b>about.html</b><span>关于慕识</span></li>
+          <li><b>visit.html</b><span>首次到访与预约表单</span></li>
+          <li><b>assets/css/site.css</b><span>设计系统与全部页面样式（单文件）</span></li>
+          <li><b>assets/js/site.js</b><span>导航、滚动入场、书塔交互、灯箱</span></li>
+          <li><b>assets/img/</b><span>品牌素材图片与标识</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <img src="assets/img/logo-light.png" alt="Mouseion 慕识书院" width="742" height="123">
+      <p class="small" style="max-width: 30em;">
+        慕识小社区，阅读大世界。自 2019 年起，专注儿童阅读文化服务的儿童友好图书馆与阅读工坊。
+      </p>
+      <p class="small" style="margin-top: 14px;">
+        <a href="tel:02585710168">025-85710168</a> · <a href="tel:18061681356">180 6168 1356</a><br>
+        南京市建邺区白龙江西街 62 号 仁恒江湾城同乐坊 2F
+      </p>
+    </div>
+    <div>
+      <p class="footer__title">课程与路径</p>
+      <div class="footer__list">
+        <a href="pathway.html">2–12 岁成长路径</a>
+        <a href="workshop.html">阅读工坊与课程</a>
+        <a href="assessment.html">阅读能力评估</a>
+        <a href="activities.html">假期营与活动</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">关于慕识</p>
+      <div class="footer__list">
+        <a href="about.html">品牌与理念</a>
+        <a href="space.html">空间与荣誉</a>
+        <a href="about.html#faculty">导师团队</a>
+        <a href="visit.html">首次到访预约</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">家长服务</p>
+      <div class="footer__list">
+        <a href="index.html#faq">常见问题</a>
+        <a href="pathway.html#home">家庭配合建议</a>
+        <a href="assessment.html#plan">阅读计划样例</a>
+        <a href="visit.html#contact">联系我们</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© <span data-year>2026</span> Mouseion 慕识书院 · 保留所有权利</span>
+    <span><a href="designs.html">五套设计方案</a> · <a href="styleguide.html">设计规范</a> · 内容来源：慕识书院品牌资料</span>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
