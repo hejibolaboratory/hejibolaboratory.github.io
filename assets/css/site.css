@@ -1869,6 +1869,29 @@ table.data td b {
   }
 }
 
+/* ---------- 导航溢出保护：菜单增至 9 项后，900–1119px 改用抽屉，避免顶部溢出 ---------- */
+@media (min-width: 900px) and (max-width: 1119px) {
+  .nav {
+    display: none;
+  }
+
+  .navtoggle {
+    display: inline-flex;
+  }
+
+  .siteheader__cta {
+    display: none;
+  }
+
+  .bottomcta {
+    display: grid;
+  }
+
+  .has-bottomcta {
+    padding-bottom: 82px;
+  }
+}
+
 /* ---------- 22. 无障碍与降级 ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {

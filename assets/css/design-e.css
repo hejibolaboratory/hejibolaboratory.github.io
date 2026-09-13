@@ -1162,6 +1162,29 @@ body.e-locked {
   }
 }
 
+/* 导航溢出保护：菜单增至 8 项后，900–1119px 改用抽屉，避免顶部溢出 */
+@media (min-width: 900px) and (max-width: 1119px) {
+  .e-nav {
+    display: none;
+  }
+
+  .e-burger {
+    display: inline-flex;
+  }
+
+  .e-navbar .e-cta {
+    display: none;
+  }
+
+  .e-bottom {
+    display: grid;
+  }
+
+  .e-body--bottom {
+    padding-bottom: 84px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
