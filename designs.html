@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网站设计方案选型（5 套）· Mouseion 慕识书院</title>
+<meta name="description" content="Mouseion 慕识书院网站设计五套方案对比：A 书院金、B 童趣乐园、C 数据可信、D 杂志画册、E 专业体系。含在线预览、长截图下载、维度对比与选型建议。">
+<meta name="theme-color" content="#221814">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  /* 本页专用：方案预览框 */
+  .preview {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: #f2f0ec;
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+  }
+
+  .preview iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 800px;
+    border: 0;
+    transform-origin: 0 0;
+    pointer-events: none;
+    background: #fff;
+  }
+
+  .preview__link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 14px;
+    background: linear-gradient(180deg, transparent 62%, rgba(34, 24, 20, 0.55));
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .preview__link span {
+    background: #fff;
+    color: var(--ink);
+    padding: 8px 16px;
+    border-radius: var(--r-pill);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .preview:hover .preview__link,
+  .preview:focus-within .preview__link {
+    opacity: 1;
+  }
+
+  .pick {
+    background: var(--surface);
+    border: 1px solid var(--line-2);
+    border-radius: var(--r-lg);
+    padding: clamp(18px, 2.2vw, 26px);
+    display: grid;
+    gap: 18px;
+  }
+
+  .pick__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .pick__badge {
+    flex: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-disp);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--ink);
+  }
+
+  .pick--a .pick__badge { background: #b17831; }
+  .pick--b .pick__badge { background: #f4c404; color: #2a2118; }
+  .pick--c .pick__badge { background: #244c5c; }
+  .pick--d .pick__badge { background: #14110e; }
+  .pick--e .pick__badge { background: linear-gradient(135deg, #244c5c, #35657a 60%, #b98f3e); }
+
+  .pick__tagline {
+    font-size: 1rem;
+    color: var(--ink-2);
+    line-height: 1.8;
+  }
+
+  .pick__list {
+    display: grid;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--ink-2);
+    line-height: 1.75;
+  }
+
+  .pick__list li {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .pick__list b {
+    font-weight: 600;
+    color: var(--ink-3);
+    font-size: 0.85rem;
+  }
+
+  .pick__foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--line-2);
+  }
+
+  .opinion {
+    background: var(--paper-2);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    padding: 18px 22px;
+    font-size: 0.94rem;
+    color: var(--ink-2);
+    line-height: 1.85;
+  }
+
+  .opinion b {
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="siteheader is-stuck">
+  <div class="wrap siteheader__inner">
+    <a class="brand" href="index.html" aria-label="Mouseion 慕识书院 首页">
+      <img src="assets/img/logo.png" alt="Mouseion 慕识书院" width="742" height="123">
+    </a>
+    <nav class="nav" aria-label="页面导航">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="#options">四套方案</a></li>
+        <li><a class="nav__link" href="#matrix">维度对比</a></li>
+        <li><a class="nav__link" href="#advice">选型建议</a></li>
+        <li><a class="nav__link" href="#spec">共同说明</a></li>
+        <li><a class="nav__link" href="styleguide.html">设计规范</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--gold btn--sm siteheader__cta" href="design-a.html">打开方案 A 首页</a>
+    <a class="btn btn--ghost btn--sm only-mobile" href="design-a.html" style="margin-left:auto;">方案 A 首页</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="wrap">
+      <p class="eyebrow" style="margin-top: 6px;">Design Options · 5 Directions</p>
+      <h1 class="display" style="font-size: clamp(1.85rem, 1.3rem + 2.6vw, 2.9rem);">网站设计方案选型</h1>
+      <p class="lead">
+        五套方案的<strong>内容、信息架构、页面清单完全一致</strong>，只更换视觉语言。
+        您可以先点开每一套的实际首页看整体气质，或直接下载长截图在手机上翻看，再对照下方维度判断。
+      </p>
+      <div class="chiprow pagehead__meta">
+        <span class="chip chip--gold">A 书院金 · 已完成全站</span>
+        <span class="chip">B / C / D / E · 首页提案</span>
+        <span class="chip">均为响应式：手机 / 平板 / 电脑</span>
+        <a class="chip chip--gold" href="screenshots.html">查看 / 下载长截图</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="options" style="padding-top: clamp(34px, 4.5vw, 60px);">
+    <div class="wrap">
+      <div class="grid grid--2" style="gap: clamp(20px, 2.6vw, 32px);">
+
+        <!-- 方案 A -->
+        <article class="pick pick--a reveal">
+          <div class="preview">
+            <iframe src="design-a.html" title="方案 A 首页预览" loading="lazy" aria-hidden="true" tabindex="-1" data-preview></iframe>
+            <a class="preview__link" href="design-a.html" aria-label="打开方案 A · 书院金 首页"><span>打开完整首页 →</span></a>
+          </div>
+          <div class="pick__head">
+            <span class="pick__badge">A</span>
+            <div>
+              <h2 class="h3">书院金 · 基准方案</h2>
+              <p class="small muted">暖纸底 + 墨黑 + 品牌金，编辑排版感</p>
+            </div>
+          </div>
+          <p class="pick__tagline">
+            最贴近品牌手册的一套：稳、耐看、信息承载量大。第一眼传达的是
+            “这是一家有积累、有标准的机构”。
+          </p>
+          <ul class="pick__list">
+            <li><b>关键词</b><span>暖纸白 / 品牌金 / 编辑栅格 / 大量留白 / 克制细节</span></li>
+            <li><b>适合</b><span>以“专业、权威、国际视野”为主诉求；中高年级家长占比较高</span></li>
+            <li><b>优点</b><span>品牌还原度最高；内容密度高不易过时；9 个页面已可直接进入开发</span></li>
+            <li><b>风险</b><span>气质偏稳，低龄家长第一眼的惊喜感一般</span></li>
+          </ul>
+          <div class="pick__foot">
+            <a class="btn btn--gold btn--sm" href="design-a.html">打开首页</a>
+            <a class="btn btn--ghost btn--sm" href="pathway.html">看内页示例</a>
+            <span class="chip">9 个页面已完成</span>
+          </div>
+        </article>
+
+        <!-- 方案 B -->
+        <article class="pick pick--b reveal">
+          <div class="preview">
+            <iframe src="design-b.html" title="方案 B 首页预览" loading="lazy" aria-hidden="true" tabindex="-1" data-preview></iframe>
+            <a class="preview__link" href="design-b.html" aria-label="打开方案 B · 童趣乐园 首页"><span>打开完整首页 →</span></a>
+          </div>
+          <div class="pick__head">
+            <span class="pick__badge">B</span>
+            <div>
+              <h2 class="h3">童趣乐园</h2>
+              <p class="small muted">圆润有机形状 + 品牌四色铺陈</p>
+            </div>
+          </div>
+          <p class="pick__tagline">
+            让孩子一眼想进去，让低龄家长感到温暖、有趣、不焦虑。
+            第一眼传达的是“这里很好玩，孩子会喜欢来”。
+          </p>
+          <ul class="pick__list">
+            <li><b>关键词</b><span>大圆角 / 有机形状 / 贴纸标签 / 四色拼接 / 轻动效</span></li>
+            <li><b>适合</b><span>2–8 岁启蒙与兴趣导向；重视到店引流与社媒传播</span></li>
+            <li><b>优点</b><span>亲和力与记忆点最强；在家长信息流里更抓眼；海报易延展</span></li>
+            <li><b>风险</b><span>中高年级家长可能觉得学术感不足；颜色多，长期使用需守住规范</span></li>
+            <li><b>规范提示</b><span>中文改用圆体（系统 Yuanti SC 等），与品牌手册的 HarmonyOS Sans SC 不一致，需品牌方确认是否开放</span></li>
+          </ul>
+          <div class="pick__foot">
+            <a class="btn btn--gold btn--sm" href="design-b.html">打开首页</a>
+            <span class="chip">首页提案</span>
+          </div>
+        </article>
+
+        <!-- 方案 C -->
+        <article class="pick pick--c reveal">
+          <div class="preview">
+            <iframe src="design-c.html" title="方案 C 首页预览" loading="lazy" aria-hidden="true" tabindex="-1" data-preview></iframe>
+            <a class="preview__link" href="design-c.html" aria-label="打开方案 C · 数据可信 首页"><span>打开完整首页 →</span></a>
+          </div>
+          <div class="pick__head">
+            <span class="pick__badge">C</span>
+            <div>
+              <h2 class="h3">数据可信</h2>
+              <p class="small muted">深色仪表盘质感 + 真实图表</p>
+            </div>
+          </div>
+          <p class="pick__tagline">
+            把成长阶段、课时投入与升阶门槛做成可读的数据。
+            第一眼传达的是“我们把每一步说清楚，进步可以被查看”。
+          </p>
+          <ul class="pick__list">
+            <li><b>关键词</b><span>深板岩 / 细网格 / 等宽数字 / 阶梯图 / 发丝线</span></li>
+            <li><b>适合</b><span>9–12 岁学术阶段为主，升学衔接诉求强，需要与学科机构正面竞争</span></li>
+            <li><b>优点</b><span>差异化最强，几乎不会与同行撞脸；天然适合承载课程说明与测评报告</span></li>
+            <li><b>风险</b><span>深色在户外手机阅读略费眼；数据必须真实且可长期维护，否则反噬信任</span></li>
+          </ul>
+          <div class="pick__foot">
+            <a class="btn btn--gold btn--sm" href="design-c.html">打开首页</a>
+            <span class="chip">首页提案</span>
+          </div>
+        </article>
+
+        <!-- 方案 D -->
+        <article class="pick pick--d reveal">
+          <div class="preview">
+            <iframe src="design-d.html" title="方案 D 首页预览" loading="lazy" aria-hidden="true" tabindex="-1" data-preview></iframe>
+            <a class="preview__link" href="design-d.html" aria-label="打开方案 D · 杂志画册 首页"><span>打开完整首页 →</span></a>
+          </div>
+          <div class="pick__head">
+            <span class="pick__badge">D</span>
+            <div>
+              <h2 class="h3">杂志画册</h2>
+              <p class="small muted">通栏大图 + 极端字号对比 + 章节编号</p>
+            </div>
+          </div>
+          <p class="pick__tagline">
+            以空间美学与内容质感取胜。
+            第一眼传达的是“这是一个有审美的地方，值得带孩子来一次”。
+          </p>
+          <ul class="pick__list">
+            <li><b>关键词</b><span>纯白 / 通栏大图 / 超大英文 / 发丝金线 / 章节体</span></li>
+            <li><b>适合</b><span>品牌形象优先、空间是核心卖点；需要大量社媒与媒体素材</span></li>
+            <li><b>优点</b><span>质感最高；图片与内容素材复用率高；适合做短视频与小红书封面</span></li>
+            <li><b>风险</b><span>信息密度低，家长“找答案”效率略低；强依赖高质量摄影，现有照片分辨率有限，正式上线建议补拍</span></li>
+          </ul>
+          <div class="pick__foot">
+            <a class="btn btn--gold btn--sm" href="design-d.html">打开首页</a>
+            <span class="chip">首页提案</span>
+          </div>
+        </article>
+
+        <!-- 方案 E -->
+        <article class="pick pick--e reveal">
+          <div class="preview">
+            <iframe src="design-e.html" title="方案 E 首页预览" loading="lazy" aria-hidden="true" tabindex="-1" data-preview></iframe>
+            <a class="preview__link" href="design-e.html" aria-label="打开方案 E · 专业体系 首页"><span>打开完整首页 →</span></a>
+          </div>
+          <div class="pick__head">
+            <span class="pick__badge">E</span>
+            <div>
+              <h2 class="h3">专业体系</h2>
+              <p class="small muted">参照头部原版阅读机构官网结构</p>
+            </div>
+          </div>
+          <p class="pick__tagline">
+            分段色带 + 大号数字 + 三阶段课程体系 + 素养课网格，是目前家长最熟悉、
+            也最容易快速看懂的“教育机构官网”语言。第一眼传达的是“体系完整、可报名”。
+          </p>
+          <ul class="pick__list">
+            <li><b>参照样本</b><span>厚海阅读（houhaienglish.com）——国内头部英语原版阅读机构</span></li>
+            <li><b>关键词</b><span>深藏青 + 品牌金 / 分段色带 / 大号数字 / 课程体系栅格 / 预约表单</span></li>
+            <li><b>适合</b><span>把“招生转化”放在第一位，家长需要快速判断体系、级别与报名方式</span></li>
+            <li><b>优点</b><span>信息获取效率最高；课程体系表达最清楚；表单直接放在页面底部，转化路径最短</span></li>
+            <li><b>风险</b><span>与同类机构官网相似度较高，品牌记忆点弱于 B / D；页面偏长</span></li>
+          </ul>
+          <div class="pick__foot">
+            <a class="btn btn--gold btn--sm" href="design-e.html">打开首页</a>
+            <span class="chip">首页提案</span>
+          </div>
+        </article>
+
+        <!-- 选型提示卡 -->
+        <article class="pick reveal" style="justify-content: center; background: var(--paper-2); border-color: transparent;">
+          <span class="chip chip--gold">怎么选</span>
+          <h2 class="h3">先定这一年的目标，再选风格</h2>
+          <p class="pick__tagline">
+            A 求“可信与完整”，B 求“亲和与引流”，C 求“理性与差异”，
+            D 求“审美与传播”，E 求“体系与转化”。
+          </p>
+          <div class="pick__foot">
+            <a class="btn btn--slate btn--sm" href="#advice">看选型建议</a>
+            <a class="btn btn--ghost btn--sm" href="#matrix">看维度对比</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 维度对比 -->
+  <section class="section section--tint" id="matrix">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">Comparison</p>
+        <h2 class="h2">维度对比</h2>
+        <p class="lead">同一套内容，五种视觉语言。以下差异只影响观感与维护成本，不影响信息完整性。</p>
+      </div>
+
+      <div class="tablewrap reveal">
+        <table class="data">
+          <caption>五套方案对照表（建议在电脑或平板上横向查看）</caption>
+          <thead>
+            <tr>
+              <th scope="col">维度</th>
+              <th scope="col">A · 书院金</th>
+              <th scope="col">B · 童趣乐园</th>
+              <th scope="col">C · 数据可信</th>
+              <th scope="col">D · 杂志画册</th>
+              <th scope="col">E · 专业体系</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>第一眼印象</b></td>
+              <td>稳重、专业</td>
+              <td>温暖、活泼</td>
+              <td>理性、可信</td>
+              <td>高级、有质感</td>
+              <td>体系完整、可报名</td>
+            </tr>
+            <tr>
+              <td><b>主色</b></td>
+              <td>暖纸白 + 墨黑 + 品牌金</td>
+              <td>品牌四专色大面积铺陈</td>
+              <td>深板岩 + 亮金 + 数据色</td>
+              <td>纯白 + 发丝金线</td>
+              <td>深藏青 + 品牌金 + 浅灰色带</td>
+            </tr>
+            <tr>
+              <td><b>字形</b></td>
+              <td>完全依品牌规范</td>
+              <td>中文圆体（需确认）</td>
+              <td>品牌规范 + 等宽数字</td>
+              <td>品牌规范 + 极端字号</td>
+              <td>品牌规范 + 几何无衬线英文</td>
+            </tr>
+            <tr>
+              <td><b>图片比重</b></td>
+              <td>中</td>
+              <td>中</td>
+              <td>低</td>
+              <td>高</td>
+              <td>中高（卡片配图）</td>
+            </tr>
+            <tr>
+              <td><b>信息密度</b></td>
+              <td>高</td>
+              <td>中</td>
+              <td>很高</td>
+              <td>低</td>
+              <td>很高</td>
+            </tr>
+            <tr>
+              <td><b>年龄侧重</b></td>
+              <td>全龄段</td>
+              <td>2–8 岁</td>
+              <td>9–12 岁学术</td>
+              <td>全龄段（品牌向）</td>
+              <td>全龄段（招生向）</td>
+            </tr>
+            <tr>
+              <td><b>转化路径</b></td>
+              <td>清晰，多入口</td>
+              <td>强，按钮大且多</td>
+              <td>清晰，偏“先测评”</td>
+              <td>偏弱，靠氛围与信任</td>
+              <td>最短，页面底部直接留资</td>
+            </tr>
+            <tr>
+              <td><b>参考样本</b></td>
+              <td>品牌手册</td>
+              <td>低龄绘本 / 亲子品牌</td>
+              <td>SaaS 数据看板</td>
+              <td>文化类杂志与画册</td>
+              <td>厚海阅读等原版阅读机构</td>
+            </tr>
+            <tr>
+              <td><b>开发与维护成本</b></td>
+              <td>低（已完成）</td>
+              <td>中</td>
+              <td>高（数据需维护）</td>
+              <td>中（依赖摄影）</td>
+              <td>中</td>
+            </tr>
+            <tr>
+              <td><b>主要风险</b></td>
+              <td>记忆点偏稳</td>
+              <td>学术感不足</td>
+              <td>数据须长期真实</td>
+              <td>需补拍高质量照片</td>
+              <td>与同类机构相似度高</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 选型建议 -->
+  <section class="section" id="advice">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">Recommendation</p>
+        <h2 class="h2">怎么选：按目的而不是按喜好</h2>
+        <p class="lead">建议先确定这一年的网站目标，再回头选方案。</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="card reveal">
+          <h3 class="card__title">如果目标是“让家长放心、把课程说清楚”</h3>
+          <p class="card__body-text">
+            选 <b>A · 书院金</b>。它信息层级最完整，家长能在两屏内判断“这里教什么、怎么教、怎么证明”。
+            可以吸收 B 的贴纸标签，用在低龄阶段区块上，给启蒙课一点活泼感。
+          </p>
+        </div>
+        <div class="card reveal">
+          <h3 class="card__title">如果目标是“到店引流、低龄启蒙”</h3>
+          <p class="card__body-text">
+            选 <b>B · 童趣乐园</b>。适合投放在家长社群与朋友圈，第一眼阻力最小；
+            配合活动海报与假期营，转化路径最短。建议同时保留 A 的部分严谨表述，避免显得“只是玩”。
+          </p>
+        </div>
+        <div class="card reveal">
+          <h3 class="card__title">如果目标是“和学科机构正面竞争”</h3>
+          <p class="card__body-text">
+            选 <b>C · 数据可信</b>。把 M0–M7 阶段、课时投入、测评门槛公开对照，
+            回应“读了这么久到底有没有用”。注意：页面上每一个数字都必须能长期维护。
+          </p>
+        </div>
+        <div class="card reveal">
+          <h3 class="card__title">如果目标是“品牌升级、媒体与社媒传播”</h3>
+          <p class="card__body-text">
+            选 <b>D · 杂志画册</b>。空间本身就是卖点，适合做媒体稿件、榜单与短视频素材的落点。
+            前提是补拍一组高质量空间与课堂照片。
+          </p>
+        </div>
+        <div class="card reveal">
+          <h3 class="card__title">如果目标是“招生转化、让家长快速看懂体系”</h3>
+          <p class="card__body-text">
+            选 <b>E · 专业体系</b>。这是参照头部原版阅读机构（厚海阅读）的结构做的：
+            分段色带、三阶段课程体系、级别明细、素养课网格、页面底部直接留资。
+            家长获取信息的效率最高，代价是与同类机构官网相似度较高。
+          </p>
+        </div>
+      </div>
+
+      <div class="opinion reveal" style="margin-top: clamp(22px, 3vw, 34px);">
+        <b>我们更推荐的组合：</b>A 作为全站主体框架（可信、完整、易维护），
+        在“课程体系”页采用 E 的体系表达方式（三阶段 + 级别明细 + 素养课网格），
+        D 的空间与活动章节放大图片张力，B 的色块与贴纸只用在 2–8 岁低龄课程页。
+        这样既有稳定骨架，又能在最需要“抓眼”和“说清体系”的地方各司其职，后期换皮肤不动内容。
+      </div>
+
+      <div class="notice reveal" style="margin-top: var(--gap);">
+        <span aria-hidden="true">✦</span>
+        <span>
+          <b>如果只能选一套：</b>偏品牌与信任选 A，偏招生转化选 E，
+          偏低龄引流选 B，偏差异化竞争选 C，偏形象升级选 D。
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 共同说明 -->
+  <section class="section section--dark" id="spec">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="eyebrow">Common Ground</p>
+        <h2 class="h2">五套方案共同的部分</h2>
+        <p class="lead">这些部分与视觉方案无关，选定任何一种都成立，也不会因为换方案而返工。</p>
+      </div>
+
+      <div class="grid grid--4">
+        <div class="card card--dark reveal">
+          <h3 class="card__title">信息架构</h3>
+          <p class="card__body-text">首页、成长路径、阅读工坊、阅读测评、空间与荣誉、活动与社区、关于慕识、首次到访，共 8 个页面。</p>
+        </div>
+        <div class="card card--dark reveal">
+          <h3 class="card__title">内容来源</h3>
+          <p class="card__body-text">全部取自现有品牌资料：成长方案家长版、A3 成长路径图、品牌指导手册、宣讲稿与活动素材，未凭空编写课程信息。</p>
+        </div>
+        <div class="card card--dark reveal">
+          <h3 class="card__title">响应式规则</h3>
+          <p class="card__body-text">手机 / 平板 / 电脑三档均已实测：320、390、768、1024、1440 五档宽度下无横向溢出，导航抽屉、标签切换、图片放大与固定底栏均可用。</p>
+        </div>
+        <div class="card card--dark reveal">
+          <h3 class="card__title">无障碍与降级</h3>
+          <p class="card__body-text">键盘可达、焦点可见、正文对比度达标、尊重“减少动效”设置；无 JavaScript 时内容仍可完整阅读。</p>
+        </div>
+      </div>
+
+      <div class="grid grid--2 reveal" style="margin-top: var(--gap);">
+        <div class="card card--dark">
+          <h3 class="card__title">页面清单</h3>
+          <div class="chiprow" style="margin-top: 4px;">
+            <span class="chip">index 首页</span>
+            <span class="chip">pathway 成长路径</span>
+            <span class="chip">workshop 阅读工坊</span>
+            <span class="chip">assessment 阅读测评</span>
+            <span class="chip">space 空间与荣誉</span>
+            <span class="chip">activities 活动与社区</span>
+            <span class="chip">about 关于慕识</span>
+            <span class="chip">visit 首次到访</span>
+            <span class="chip">styleguide 设计规范</span>
+          </div>
+        </div>
+        <div class="card card--dark">
+          <h3 class="card__title">待确认事项</h3>
+          <ul class="stage__meta" style="margin-top: 4px;">
+            <li><b>电话</b><span>资料中有两套号码（025-85710168 / 025-85710158 等），需确认当前对外号码</span></li>
+            <li><b>邮箱</b><span>info@mouseion.cn 为按官网域名推定，需确认或替换</span></li>
+            <li><b>照片</b><span>现有照片来自品牌资料，正式上线建议补拍空间与课堂</span></li>
+            <li><b>表单</b><span>预约表单需要接入企业微信或 CRM 后台</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap wrap--narrow" style="text-align: center;">
+      <p class="eyebrow eyebrow--plain reveal" style="justify-content: center;">Next</p>
+      <h2 class="h2 reveal" style="margin-top: 14px;">选定方向后，我们再往下做</h2>
+      <p class="lead reveal" style="margin-top: 16px;">
+        确定方案后，可以把该方案从首页扩展到全部 8 个内页，并补齐移动端细节、图片与文案校对；
+        也可以先做 1–2 个内页看效果再决定。
+      </p>
+      <div class="btn-row reveal" style="margin-top: 26px; justify-content: center;">
+        <a class="btn btn--gold" href="design-a.html">A 书院金</a>
+        <a class="btn btn--ghost" href="design-b.html">B 童趣乐园</a>
+        <a class="btn btn--ghost" href="design-c.html">C 数据可信</a>
+        <a class="btn btn--ghost" href="design-d.html">D 杂志画册</a>
+        <a class="btn btn--ghost" href="design-e.html">E 专业体系</a>
+      </div>
+      <div class="btn-row reveal" style="margin-top: 14px; justify-content: center;">
+        <a class="btn btn--slate" href="screenshots.html">查看 / 下载五套长截图</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <img src="assets/img/logo-light.png" alt="Mouseion 慕识书院" width="742" height="123">
+      <p class="small" style="max-width: 30em;">
+        慕识小社区，阅读大世界。自 2019 年起，专注儿童阅读文化服务的儿童友好图书馆与阅读工坊。
+      </p>
+      <p class="small" style="margin-top: 14px;">
+        <a href="tel:02585710168">025-85710168</a> · <a href="tel:18061681356">180 6168 1356</a><br>
+        南京市建邺区白龙江西街 62 号 仁恒江湾城同乐坊 2F
+      </p>
+    </div>
+    <div>
+      <p class="footer__title">五套方案</p>
+      <div class="footer__list">
+        <a href="design-a.html">方案 A · 书院金</a>
+        <a href="design-b.html">方案 B · 童趣乐园</a>
+        <a href="design-c.html">方案 C · 数据可信</a>
+        <a href="design-d.html">方案 D · 杂志画册</a>
+        <a href="design-e.html">方案 E · 专业体系</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">网站页面</p>
+      <div class="footer__list">
+        <a href="pathway.html">成长路径</a>
+        <a href="workshop.html">阅读工坊</a>
+        <a href="assessment.html">阅读测评</a>
+        <a href="visit.html">首次到访</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">规范与说明</p>
+      <div class="footer__list">
+        <a href="styleguide.html">设计规范</a>
+        <a href="space.html">空间与荣誉</a>
+        <a href="activities.html">活动与社区</a>
+        <a href="about.html">关于慕识</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© <span data-year>2026</span> Mouseion 慕识书院 · 保留所有权利</span>
+    <span>设计方案选型 · 内容来源：慕识书院品牌资料</span>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+<script>
+  /* 方案预览：把 1280×800 的整页等比缩放进预览框 */
+  (function () {
+    var frames = document.querySelectorAll("[data-preview]");
+    if (!frames.length) return;
+    var fit = function () {
+      frames.forEach(function (f) {
+        var box = f.parentElement;
+        var w = box.clientWidth;
+        if (!w) return;
+        f.style.transform = "scale(" + w / 1280 + ")";
+      });
+    };
+    fit();
+    window.addEventListener("resize", fit);
+    window.addEventListener("load", fit);
+  })();
+</script>
+</body>
+</html>

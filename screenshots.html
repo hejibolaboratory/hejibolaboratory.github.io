@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>五套方案长截图 · Mouseion 慕识书院 网站设计提案</title>
+<meta name="description" content="Mouseion 慕识书院网站五套设计方案（A 书院金 / B 童趣乐园 / C 数据可信 / D 杂志画册 / E 专业体系）的整页长截图，含桌面版与手机版，可直接下载转发。">
+<meta name="theme-color" content="#221814">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .shot-card {
+    background: var(--surface);
+    border: 1px solid var(--line-2);
+    border-radius: var(--r-lg);
+    padding: clamp(16px, 2vw, 24px);
+    display: grid;
+    gap: 16px;
+  }
+
+  .shot-card__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .badge {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-disp);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--ink);
+  }
+
+  .badge--a { background: #b17831; }
+  .badge--b { background: #f4c404; color: #2a2118; }
+  .badge--c { background: #244c5c; }
+  .badge--d { background: #14110e; }
+  .badge--e { background: linear-gradient(135deg, #244c5c, #35657a 60%, #b98f3e); }
+
+  .shot-card__body {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .shot-frame {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: var(--paper-2);
+    height: min(74vh, 680px);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .shot-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .shot-frame--desktop {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .shot-frame--mobile {
+    flex: none;
+    width: min(240px, 34%);
+  }
+
+  .shot-label {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(34, 24, 20, 0.82);
+    color: #fff;
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+  }
+
+  .shot-card__foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    padding-top: 14px;
+    border-top: 1px solid var(--line-2);
+  }
+
+  @media (max-width: 640px) {
+    .shot-card__body {
+      flex-direction: column;
+    }
+    .shot-frame--mobile {
+      width: min(240px, 62%);
+      margin-inline: auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="siteheader is-stuck">
+  <div class="wrap siteheader__inner">
+    <a class="brand" href="index.html" aria-label="Mouseion 慕识书院 首页">
+      <img src="assets/img/logo.png" alt="Mouseion 慕识书院" width="742" height="123">
+    </a>
+    <nav class="nav" aria-label="页面导航">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="designs.html">方案选型</a></li>
+        <li><a class="nav__link" href="#shots" aria-current="page">长截图</a></li>
+        <li><a class="nav__link" href="#howto">怎么发给老板</a></li>
+        <li><a class="nav__link" href="styleguide.html">设计规范</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--gold btn--sm siteheader__cta" href="designs.html">返回方案选型</a>
+    <a class="btn btn--ghost btn--sm only-mobile" href="designs.html" style="margin-left:auto;">方案选型</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="pagehead">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="index.html">首页</a><span aria-hidden="true">/</span>
+        <a href="designs.html">方案选型</a><span aria-hidden="true">/</span><span>长截图</span>
+      </nav>
+      <div class="pagehead__inner">
+        <p class="eyebrow" style="margin-top: 16px;">Full-page Screenshots</p>
+        <h1 class="display" style="font-size: clamp(1.8rem, 1.3rem + 2.4vw, 2.7rem);">五套方案 · 整页长截图</h1>
+        <p class="lead">
+          每套方案都有「桌面长图」和「手机长图」两个版本，都是整页完整截取（不是首屏截图）。
+          下面的预览框内可以上下滑动，也可以直接下载图片发给老板。
+        </p>
+        <div class="chiprow pagehead__meta">
+          <span class="chip chip--gold">桌面长图 1440px 宽</span>
+          <span class="chip chip--gold">手机长图 390px 宽</span>
+          <span class="chip">共 10 张 · JPEG</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="howto" style="padding-block: clamp(28px, 3.6vw, 48px);">
+    <div class="wrap">
+      <div class="grid grid--2">
+        <div class="card">
+          <h2 class="card__title">怎么发给老板</h2>
+          <ul class="stage__meta" style="margin-top: 6px;">
+            <li><b>推荐</b><span>以「文件」方式发送，而不是「图片」。长图被压缩后会看不清小字。</span></li>
+            <li><b>顺序</b><span>建议发「方案选型页长图 + 五套桌面长图」，手机上翻一遍就能定方向。</span></li>
+            <li><b>位置</b><span>所有图片都在项目目录的 <code>screenshots/</code> 文件夹里。</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 class="card__title">一眼看懂五套的区别</h3>
+          <ul class="stage__meta" style="margin-top: 6px;">
+            <li><b>A</b><span>暖纸 + 墨金，稳重专业，适合建立信任；全站 9 页已完成。</span></li>
+            <li><b>B</b><span>圆润色块 + 品牌四色，亲和有趣，适合低龄引流。</span></li>
+            <li><b>C</b><span>深色数据风，理性可信，适合强调测评与升学衔接。</span></li>
+            <li><b>D</b><span>通栏大图 + 超大字，高级有质感，适合品牌与社媒传播。</span></li>
+            <li><b>E</b><span>深藏青 + 品牌金，机构官网语言，体系最清楚、留资路径最短。</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="shots" style="padding-top: 0;">
+    <div class="wrap" style="display: grid; gap: clamp(20px, 2.6vw, 32px);">
+
+      <!-- A -->
+      <article class="shot-card">
+        <div class="shot-card__head">
+          <span class="badge badge--a">A</span>
+          <div>
+            <h2 class="h3">书院金 · 基准方案</h2>
+            <p class="small muted">暖纸底 + 墨黑 + 品牌金｜稳重、专业｜全站 9 页已完成</p>
+          </div>
+        </div>
+        <div class="shot-card__body">
+          <div class="shot-frame shot-frame--desktop">
+            <span class="shot-label"><span>桌面长图 · 1440px</span><span>框内可上下滑动</span></span>
+            <img src="screenshots/方案A_书院金_桌面长图.jpg" alt="方案 A 书院金 首页桌面长截图" loading="lazy">
+          </div>
+          <div class="shot-frame shot-frame--mobile">
+            <span class="shot-label"><span>手机 · 390px</span></span>
+            <img src="screenshots/方案A_书院金_手机长图.jpg" alt="方案 A 书院金 首页手机长截图" loading="lazy">
+          </div>
+        </div>
+        <div class="shot-card__foot">
+          <a class="btn btn--gold btn--sm" href="screenshots/方案A_书院金_桌面长图.jpg" download>下载桌面长图</a>
+          <a class="btn btn--ghost btn--sm" href="screenshots/方案A_书院金_手机长图.jpg" download>下载手机长图</a>
+          <a class="btn btn--ghost btn--sm" href="design-a.html">打开在线版</a>
+        </div>
+      </article>
+
+      <!-- B -->
+      <article class="shot-card">
+        <div class="shot-card__head">
+          <span class="badge badge--b">B</span>
+          <div>
+            <h2 class="h3">童趣乐园</h2>
+            <p class="small muted">圆润有机形状 + 品牌四色铺陈｜温暖、活泼｜低龄引流向</p>
+          </div>
+        </div>
+        <div class="shot-card__body">
+          <div class="shot-frame shot-frame--desktop">
+            <span class="shot-label"><span>桌面长图 · 1440px</span><span>框内可上下滑动</span></span>
+            <img src="screenshots/方案B_童趣乐园_桌面长图.jpg" alt="方案 B 童趣乐园 首页桌面长截图" loading="lazy">
+          </div>
+          <div class="shot-frame shot-frame--mobile">
+            <span class="shot-label"><span>手机 · 390px</span></span>
+            <img src="screenshots/方案B_童趣乐园_手机长图.jpg" alt="方案 B 童趣乐园 首页手机长截图" loading="lazy">
+          </div>
+        </div>
+        <div class="shot-card__foot">
+          <a class="btn btn--gold btn--sm" href="screenshots/方案B_童趣乐园_桌面长图.jpg" download>下载桌面长图</a>
+          <a class="btn btn--ghost btn--sm" href="screenshots/方案B_童趣乐园_手机长图.jpg" download>下载手机长图</a>
+          <a class="btn btn--ghost btn--sm" href="design-b.html">打开在线版</a>
+        </div>
+      </article>
+
+      <!-- C -->
+      <article class="shot-card">
+        <div class="shot-card__head">
+          <span class="badge badge--c">C</span>
+          <div>
+            <h2 class="h3">数据可信</h2>
+            <p class="small muted">深色仪表盘质感 + 真实图表｜理性、可信｜升学衔接向</p>
+          </div>
+        </div>
+        <div class="shot-card__body">
+          <div class="shot-frame shot-frame--desktop">
+            <span class="shot-label"><span>桌面长图 · 1440px</span><span>框内可上下滑动</span></span>
+            <img src="screenshots/方案C_数据可信_桌面长图.jpg" alt="方案 C 数据可信 首页桌面长截图" loading="lazy">
+          </div>
+          <div class="shot-frame shot-frame--mobile">
+            <span class="shot-label"><span>手机 · 390px</span></span>
+            <img src="screenshots/方案C_数据可信_手机长图.jpg" alt="方案 C 数据可信 首页手机长截图" loading="lazy">
+          </div>
+        </div>
+        <div class="shot-card__foot">
+          <a class="btn btn--gold btn--sm" href="screenshots/方案C_数据可信_桌面长图.jpg" download>下载桌面长图</a>
+          <a class="btn btn--ghost btn--sm" href="screenshots/方案C_数据可信_手机长图.jpg" download>下载手机长图</a>
+          <a class="btn btn--ghost btn--sm" href="design-c.html">打开在线版</a>
+        </div>
+      </article>
+
+      <!-- D -->
+      <article class="shot-card">
+        <div class="shot-card__head">
+          <span class="badge badge--d">D</span>
+          <div>
+            <h2 class="h3">杂志画册</h2>
+            <p class="small muted">通栏大图 + 极端字号 + 章节编号｜高级、有质感｜品牌向</p>
+          </div>
+        </div>
+        <div class="shot-card__body">
+          <div class="shot-frame shot-frame--desktop">
+            <span class="shot-label"><span>桌面长图 · 1440px</span><span>框内可上下滑动</span></span>
+            <img src="screenshots/方案D_杂志画册_桌面长图.jpg" alt="方案 D 杂志画册 首页桌面长截图" loading="lazy">
+          </div>
+          <div class="shot-frame shot-frame--mobile">
+            <span class="shot-label"><span>手机 · 390px</span></span>
+            <img src="screenshots/方案D_杂志画册_手机长图.jpg" alt="方案 D 杂志画册 首页手机长截图" loading="lazy">
+          </div>
+        </div>
+        <div class="shot-card__foot">
+          <a class="btn btn--gold btn--sm" href="screenshots/方案D_杂志画册_桌面长图.jpg" download>下载桌面长图</a>
+          <a class="btn btn--ghost btn--sm" href="screenshots/方案D_杂志画册_手机长图.jpg" download>下载手机长图</a>
+          <a class="btn btn--ghost btn--sm" href="design-d.html">打开在线版</a>
+        </div>
+      </article>
+
+      <!-- E -->
+      <article class="shot-card">
+        <div class="shot-card__head">
+          <span class="badge badge--e">E</span>
+          <div>
+            <h2 class="h3">专业体系</h2>
+            <p class="small muted">参照厚海阅读官网结构｜体系完整、可报名｜招生转化向</p>
+          </div>
+        </div>
+        <div class="shot-card__body">
+          <div class="shot-frame shot-frame--desktop">
+            <span class="shot-label"><span>桌面长图 · 1440px</span><span>框内可上下滑动</span></span>
+            <img src="screenshots/方案E_专业体系_桌面长图.jpg" alt="方案 E 专业体系 首页桌面长截图" loading="lazy">
+          </div>
+          <div class="shot-frame shot-frame--mobile">
+            <span class="shot-label"><span>手机 · 390px</span></span>
+            <img src="screenshots/方案E_专业体系_手机长图.jpg" alt="方案 E 专业体系 首页手机长截图" loading="lazy">
+          </div>
+        </div>
+        <div class="shot-card__foot">
+          <a class="btn btn--gold btn--sm" href="screenshots/方案E_专业体系_桌面长图.jpg" download>下载桌面长图</a>
+          <a class="btn btn--ghost btn--sm" href="screenshots/方案E_专业体系_手机长图.jpg" download>下载手机长图</a>
+          <a class="btn btn--ghost btn--sm" href="design-e.html">打开在线版</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section section--dark">
+    <div class="wrap wrap--narrow" style="text-align: center;">
+      <p class="eyebrow eyebrow--plain reveal" style="justify-content: center;">Next</p>
+      <h2 class="h2 reveal" style="margin-top: 14px;">选定方向后，我再把内页补上</h2>
+      <p class="lead reveal" style="margin-top: 16px;">
+        A 已经完成全部 8 个内页与设计规范；B / C / D / E 目前是首页提案。
+        确定方向后，我把该方案扩展到全部内页，并补齐移动端细节与文案校对。
+      </p>
+      <div class="btn-row reveal" style="margin-top: 26px; justify-content: center;">
+        <a class="btn btn--gold" href="designs.html">返回方案选型</a>
+        <a class="btn btn--onDark" href="styleguide.html">设计规范</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <img src="assets/img/logo-light.png" alt="Mouseion 慕识书院" width="742" height="123">
+      <p class="small" style="max-width: 30em;">
+        慕识小社区，阅读大世界。自 2019 年起，专注儿童阅读文化服务的儿童友好图书馆与阅读工坊。
+      </p>
+      <p class="small" style="margin-top: 14px;">
+        <a href="tel:02585710168">025-85710168</a> · <a href="tel:18061681356">180 6168 1356</a><br>
+        南京市建邺区白龙江西街 62 号 仁恒江湾城同乐坊 2F
+      </p>
+    </div>
+    <div>
+      <p class="footer__title">五套方案</p>
+      <div class="footer__list">
+        <a href="design-a.html">方案 A · 书院金</a>
+        <a href="design-b.html">方案 B · 童趣乐园</a>
+        <a href="design-c.html">方案 C · 数据可信</a>
+        <a href="design-d.html">方案 D · 杂志画册</a>
+        <a href="design-e.html">方案 E · 专业体系</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">提案材料</p>
+      <div class="footer__list">
+        <a href="designs.html">方案选型总览</a>
+        <a href="screenshots.html">整页长截图</a>
+        <a href="styleguide.html">设计规范</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer__title">网站页面</p>
+      <div class="footer__list">
+        <a href="pathway.html">成长路径</a>
+        <a href="workshop.html">阅读工坊</a>
+        <a href="assessment.html">阅读测评</a>
+        <a href="visit.html">首次到访</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© <span data-year>2026</span> Mouseion 慕识书院 · 保留所有权利</span>
+    <span><a href="designs.html">五套设计方案</a> · <a href="styleguide.html">设计规范</a></span>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>

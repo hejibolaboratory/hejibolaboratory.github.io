@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>方案 C · 数据可信｜Mouseion 慕识书院 网站设计提案</title>
+<meta name="description" content="Mouseion 慕识书院网站设计方案 C：数据可信。深色仪表盘质感，把成长阶段、课时投入与测评节点做成可读的数据，服务关注升学与词汇量的家长。">
+<meta name="theme-color" content="#0E1A20">
+<link rel="stylesheet" href="assets/css/design-c.css">
+</head>
+<body class="c-body c-body--bottom">
+
+<a class="c-skip" href="#main">跳到主要内容</a>
+
+<div class="c-topbar">
+  <div class="c-wrap c-topbar__in">
+    <span>MOUSEION 慕识书院 · 儿童阅读文化服务</span>
+    <span>025-85710168 · www.mouseion.cn</span>
+  </div>
+</div>
+
+<header class="c-navbar">
+  <div class="c-wrap c-navbar__in">
+    <a class="c-logo" href="design-c.html" aria-label="Mouseion 慕识书院 首页">
+      <img src="assets/img/logo-light.png" alt="Mouseion 慕识书院" width="742" height="123">
+    </a>
+    <nav class="c-nav" aria-label="主导航">
+      <ul>
+        <li><a href="design-c.html" aria-current="page">首页</a></li>
+        <li><a href="pathway.html">成长路径</a></li>
+        <li><a href="design-c.html#plan">阶段对照</a></li>
+        <li><a href="assessment.html">阅读测评</a></li>
+        <li><a href="design-c.html#space">空间</a></li>
+        <li><a href="design-c.html#faq">问答</a></li>
+      </ul>
+    </nav>
+    <a class="c-btn c-btn--gold c-btn--sm c-cta" href="visit.html">预约评估</a>
+    <button class="c-burger" type="button" data-navtoggle aria-expanded="false" aria-label="打开菜单"><i></i></button>
+  </div>
+</header>
+
+<nav class="c-drawer" data-drawer aria-label="移动端导航">
+  <a href="design-c.html" aria-current="page">首页</a>
+  <a href="pathway.html">成长路径</a>
+  <a href="design-c.html#plan">阶段对照</a>
+  <a href="assessment.html">阅读测评</a>
+  <a href="design-c.html#space">空间</a>
+  <a href="design-c.html#faq">问答</a>
+  <a class="c-btn c-btn--gold" href="visit.html" style="margin-top: 14px;">预约首次到访</a>
+</nav>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="c-hero">
+    <div class="c-wrap c-hero__grid">
+      <div>
+        <p class="c-label">Evidence First · 2–12 岁</p>
+        <h1 class="c-h1">把“有进步”<br>变成可查看的数据</h1>
+        <p class="c-lead">
+          八个成长阶段、每个阶段的课时投入、语言里程碑与可观察证据，
+          全部公开对照。测评不是考完就结束，而是下一步教学的起点——
+          年龄到了，不代表必须升阶。
+        </p>
+        <div class="c-btnrow">
+          <a class="c-btn c-btn--gold" href="visit.html">预约阅读能力评估</a>
+          <a class="c-btn c-btn--ghost" href="#plan">查看 M0–M7 对照表</a>
+        </div>
+        <div class="c-kpis">
+          <div class="c-kpi"><b>M0–M7</b><span>成长阶段</span></div>
+          <div class="c-kpi"><b>2 岁起</b><span>建议起始年龄</span></div>
+          <div class="c-kpi"><b>90–105 min</b><span>学术阶段单次课时</span></div>
+          <div class="c-kpi"><b>4 个</b><span>测评时间点</span></div>
+        </div>
+      </div>
+
+      <div class="c-panel">
+        <div class="c-panel__head">
+          <h3>成长阶梯 · 语言里程碑与阶段分组</h3>
+          <span class="c-mono c-small">FIG. 01</span>
+        </div>
+
+        <svg class="c-chart" data-chart viewBox="0 0 720 320" role="img"
+             aria-label="M0 到 M7 八个阶段的语言里程碑阶梯图：M0 启蒙、M1 Pre-A1、M2 向 A1 过渡、M3 与 M4 A1、M5 A1 学术过渡、M6 A2、M7 B1">
+          <line class="c-gridline" x1="30" y1="52" x2="690" y2="52"></line>
+          <line class="c-gridline" x1="30" y1="102" x2="690" y2="102"></line>
+          <line class="c-gridline" x1="30" y1="152" x2="690" y2="152"></line>
+          <line class="c-gridline" x1="30" y1="202" x2="690" y2="202"></line>
+          <line class="c-axis" x1="30" y1="252" x2="690" y2="252"></line>
+
+          <rect class="c-bar" x="49.25" y="232" width="44" height="20" fill="#00BC74" rx="2"></rect>
+          <rect class="c-bar" x="131.75" y="208" width="44" height="44" fill="#00BC74" rx="2"></rect>
+          <rect class="c-bar" x="214.25" y="176" width="44" height="76" fill="#3D8CDC" rx="2"></rect>
+          <rect class="c-bar" x="296.75" y="152" width="44" height="100" fill="#FC6C34" rx="2"></rect>
+          <rect class="c-bar" x="379.25" y="132" width="44" height="120" fill="#FC6C34" rx="2"></rect>
+          <rect class="c-bar" x="461.75" y="112" width="44" height="140" fill="#F4C404" rx="2"></rect>
+          <rect class="c-bar" x="544.25" y="84" width="44" height="168" fill="#F4C404" rx="2"></rect>
+          <rect class="c-bar" x="626.75" y="52" width="44" height="200" fill="#F4C404" rx="2"></rect>
+
+          <text x="71.25" y="224" text-anchor="middle">启蒙</text>
+          <text x="153.75" y="200" text-anchor="middle">Pre-A1</text>
+          <text x="236.25" y="168" text-anchor="middle">→ A1</text>
+          <text x="318.75" y="144" text-anchor="middle">A1</text>
+          <text x="401.25" y="124" text-anchor="middle">A1</text>
+          <text x="483.75" y="104" text-anchor="middle">A1 学术</text>
+          <text x="566.25" y="76" text-anchor="middle">A2</text>
+          <text x="648.75" y="44" text-anchor="middle">B1</text>
+
+          <text x="71.25" y="274" text-anchor="middle" fill="#F4C404">M0</text>
+          <text x="153.75" y="274" text-anchor="middle" fill="#F4C404">M1</text>
+          <text x="236.25" y="274" text-anchor="middle" fill="#F4C404">M2</text>
+          <text x="318.75" y="274" text-anchor="middle" fill="#F4C404">M3</text>
+          <text x="401.25" y="274" text-anchor="middle" fill="#F4C404">M4</text>
+          <text x="483.75" y="274" text-anchor="middle" fill="#F4C404">M5</text>
+          <text x="566.25" y="274" text-anchor="middle" fill="#F4C404">M6</text>
+          <text x="648.75" y="274" text-anchor="middle" fill="#F4C404">M7</text>
+
+          <text x="71.25" y="294" text-anchor="middle">2–3</text>
+          <text x="153.75" y="294" text-anchor="middle">4–5</text>
+          <text x="236.25" y="294" text-anchor="middle">5–6</text>
+          <text x="318.75" y="294" text-anchor="middle">6–7.5</text>
+          <text x="401.25" y="294" text-anchor="middle">7.5–9</text>
+          <text x="483.75" y="294" text-anchor="middle">9–10</text>
+          <text x="566.25" y="294" text-anchor="middle">10–11</text>
+          <text x="648.75" y="294" text-anchor="middle">11–12</text>
+        </svg>
+
+        <div class="c-legend">
+          <span><i style="background:#00BC74"></i>兴趣先发生 · M0–M1</span>
+          <span><i style="background:#3D8CDC"></i>拼读桥梁 · M2</span>
+          <span><i style="background:#FC6C34"></i>独立理解 · M3–M4</span>
+          <span><i style="background:#F4C404"></i>学术阅读 · M5–M7</span>
+        </div>
+        <p class="c-small" style="margin-top: 12px;">
+          纵轴为阶段性的能力阶梯示意，不是考试分数；语言等级为课程里程碑，
+          机构内部的文本难度工作区间不等于官方等级换算。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 指标 -->
+  <section class="c-sec c-sec--line" style="padding-top: 0;">
+    <div class="c-wrap">
+      <div class="c-metrics" data-reveal>
+        <div class="c-metric">
+          <b><span data-count="20000" data-suffix="+">20,000+</span></b>
+          <span>册英文原版图书</span>
+        </div>
+        <div class="c-metric">
+          <b>4</b>
+          <span>大阅读领域</span>
+        </div>
+        <div class="c-metric">
+          <b><span data-count="100" data-suffix="+">100+</span></b>
+          <span>场书展 / 讲座 / 阅读会</span>
+        </div>
+        <div class="c-metric">
+          <b>80%</b>
+          <span>核心文本理解的阶段达标参考值</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 阶段分组环 -->
+  <section class="c-sec c-sec--line">
+    <div class="c-wrap">
+      <div class="c-line-head">
+        <h2 class="c-h2">八个阶段，四段旅程</h2>
+        <span class="c-mono c-small">FIG. 02 · 阶段数量占比</span>
+      </div>
+      <div class="c-grid c-grid--4" data-reveal>
+        <div class="c-cell">
+          <div class="c-ring" style="--p: 25; --rc: #00BC74"><b>2 / 8</b></div>
+          <h3>兴趣先发生，语言才会生长</h3>
+          <p>M0–M1：建立书本概念、愿意听与回应，围绕熟悉主题说完整句。</p>
+        </div>
+        <div class="c-cell">
+          <div class="c-ring" style="--p: 12.5; --rc: #3D8CDC"><b>1 / 8</b></div>
+          <h3>从“能读出来”走向“能读懂”</h3>
+          <p>M2：解码规则词与高频词，按开端—经过—结果复述。</p>
+        </div>
+        <div class="c-cell">
+          <div class="c-ring" style="--p: 25; --rc: #FC6C34"><b>2 / 8</b></div>
+          <h3>从理解文本走向用证据解释</h3>
+          <p>M3–M4：主旨细节、因果比较、段落写作与跨文本图示。</p>
+        </div>
+        <div class="c-cell">
+          <div class="c-ring" style="--p: 37.5; --rc: #F4C404"><b>3 / 8</b></div>
+          <h3>从跨文本综合走向独立研究</h3>
+          <p>M5–M7：批注笔记、主张—证据—解释、多段写作与迷你研究。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 阶段对照表 -->
+  <section class="c-sec c-sec--line" id="plan">
+    <div class="c-wrap">
+      <div class="c-line-head">
+        <h2 class="c-h2">M0–M7 阶段对照表</h2>
+        <a class="c-link" href="pathway.html">打开完整路径 <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="c-tablewrap" data-reveal>
+        <table class="c-table">
+          <caption class="c-sr">慕识 2–12 岁英语阅读工坊 M0 至 M7 八个阶段的年龄、学习节奏、语言里程碑与阶段重点</caption>
+          <thead>
+            <tr>
+              <th scope="col">级别</th>
+              <th scope="col">年龄</th>
+              <th scope="col">学习节奏</th>
+              <th scope="col">语言里程碑</th>
+              <th scope="col">阶段重点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="c-code">M0 启萌陪伴</td>
+              <td class="c-num">2–3 岁</td>
+              <td class="c-num">45 min/次 · 2–3 次/周 · 开放周期</td>
+              <td>语音与意义启蒙</td>
+              <td>愿意听、愿意看、愿意回应</td>
+            </tr>
+            <tr>
+              <td class="c-code">M1 主题共读 I</td>
+              <td class="c-num">4–5 岁</td>
+              <td class="c-num">60 min/次 · 2 次/周 · 约 1 学年</td>
+              <td>Pre-A1 起步</td>
+              <td>围绕熟悉主题理解并表达</td>
+            </tr>
+            <tr>
+              <td class="c-code">M2 拼读桥梁</td>
+              <td class="c-num">5–6 岁</td>
+              <td class="c-num">90 min/次 · 2 次/周 · 约 1 学年</td>
+              <td>Pre-A1 稳固 / 向 A1 过渡</td>
+              <td>从拼读走向真正读懂短文</td>
+            </tr>
+            <tr>
+              <td class="c-code">M3 探索阅读 I</td>
+              <td class="c-num">6–7.5 岁</td>
+              <td class="c-num">90 min/次 · 2 次/周 · 约 1 学年</td>
+              <td>A1 起步</td>
+              <td>理解故事与信息文的基本结构</td>
+            </tr>
+            <tr>
+              <td class="c-code">M4 探索阅读 II</td>
+              <td class="c-num">7.5–9 岁</td>
+              <td class="c-num">90 min/次 · 2 次/周 · 约 1 学年</td>
+              <td>A1 稳固</td>
+              <td>比较、因果、总结并写成段落</td>
+            </tr>
+            <tr>
+              <td class="c-code">M5 学术阅读 I</td>
+              <td class="c-num">9–10 岁</td>
+              <td class="c-num">90–105 min/次 · 2 次/周 · 约 30 教学周/阶*</td>
+              <td>A1 学术过渡</td>
+              <td>从文本中找证据解释观点</td>
+            </tr>
+            <tr>
+              <td class="c-code">M6 学术阅读 II</td>
+              <td class="c-num">10–11 岁</td>
+              <td class="c-num">90–105 min/次 · 2 次/周 · 约 30 教学周/阶*</td>
+              <td>A2</td>
+              <td>跨文本综合信息并形成论证</td>
+            </tr>
+            <tr>
+              <td class="c-code">M7 学术阅读 III</td>
+              <td class="c-num">11–12 岁</td>
+              <td class="c-num">90–105 min/次 · 2 次/周 · 约 30 教学周/阶*</td>
+              <td>B1</td>
+              <td>独立研究、评价信息并清晰表达</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="c-small" style="margin-top: 12px;">
+        * 学术阶按“每阶 10 个单元、每单元约 6 次课”的工作假设测算：10 × 6 = 60 课次，
+        每周 2 次约 30 教学周，总教学量约 90–105 小时。最终以实际单元数与达标速度为准。
+      </p>
+    </div>
+  </section>
+
+  <!-- 能力四股绳 -->
+  <section class="c-sec c-sec--line">
+    <div class="c-wrap">
+      <div class="c-line-head">
+        <h2 class="c-h2">能力不是一条线，而是四股绳</h2>
+        <span class="c-mono c-small">同步推进 · 四项证据</span>
+      </div>
+      <div class="c-grid c-grid--4" data-reveal>
+        <div class="c-cell c-domain" style="--dc: #F4C404">
+          <span class="c-cell__idx">CAP 01</span>
+          <h3>阅读理解</h3>
+          <p>看图理解 → 解码短句 → 主旨与结构 → 跨文本与多来源综合。</p>
+          <p class="c-small">证据：陌生文本理解率、复述质量、图文整合、推断与总结。</p>
+        </div>
+        <div class="c-cell c-domain" style="--dc: #3D8CDC">
+          <span class="c-cell__idx">CAP 02</span>
+          <h3>思辨与证据</h3>
+          <p>观察与分类 → 顺序与因果 → 事实 / 观点 → 主张—证据—解释 → 评价证据。</p>
+          <p class="c-small">证据：能否说明“我为什么这样想”、证据是否相关、结论是否考虑限制。</p>
+        </div>
+        <div class="c-cell c-domain" style="--dc: #FC6C34">
+          <span class="c-cell__idx">CAP 03</span>
+          <h3>语言表达</h3>
+          <p>词语块 → 完整句 → 连贯复述 → 段落写作 → 多段论证与演讲。</p>
+          <p class="c-small">证据：信息是否完整、结构是否清楚、语言是否准确、能否按反馈修订。</p>
+        </div>
+        <div class="c-cell c-domain" style="--dc: #00BC74">
+          <span class="c-cell__idx">CAP 04</span>
+          <h3>学习自主性</h3>
+          <p>跟随参与 → 策略使用 → 批注与笔记 → 计划、监控、复盘 → 独立研究。</p>
+          <p class="c-small">证据：面对新文本会不会选策略、遇到不懂会不会澄清、能否迁移。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 测评 -->
+  <section class="c-sec c-sec--line">
+    <div class="c-wrap">
+      <div class="c-line-head">
+        <h2 class="c-h2">四个测评时间点与升阶门槛</h2>
+        <a class="c-link" href="assessment.html">测评说明 <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div style="display: grid; gap: clamp(20px, 2.6vw, 34px); grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));">
+        <div class="c-tl" data-reveal>
+          <div class="c-tl__item">
+            <span class="c-tl__t">01 · 入课定位</span>
+            <h3>决定起点与支持方式</h3>
+            <p>导师面谈、陌生文本、口语 / 拼读与写作样本。</p>
+          </div>
+          <div class="c-tl__item">
+            <span class="c-tl__t">02 · 过程记录</span>
+            <h3>及时补强，不等到期末</h3>
+            <p>每课观察、每单元作品、策略使用与纠错。</p>
+          </div>
+          <div class="c-tl__item">
+            <span class="c-tl__t">03 · 阶段复盘</span>
+            <h3>看见真正的能力增长</h3>
+            <p>前后样本对比、阅读测评、口头 / 书面项目。</p>
+          </div>
+          <div class="c-tl__item">
+            <span class="c-tl__t">04 · 升阶决策</span>
+            <h3>决定升阶、延长或个性化加速</h3>
+            <p>连续两次达标 + 作品证据 + 出勤与完成情况。</p>
+          </div>
+        </div>
+
+        <div class="c-panel" data-reveal>
+          <div class="c-panel__head">
+            <h3>升阶门槛</h3>
+            <span class="c-mono c-small">GATE</span>
+          </div>
+          <div class="c-metrics" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
+            <div class="c-metric">
+              <b>≈ 80%</b>
+              <span>核心文本理解，且陌生文本仍能保持基本表现</span>
+            </div>
+            <div class="c-metric">
+              <b>独立</b>
+              <span>关键策略达到“独立完成”，不依赖提示</span>
+            </div>
+            <div class="c-metric">
+              <b>≥ 3 / 4</b>
+              <span>口语、写作、项目或答辩达到阶段量表</span>
+            </div>
+            <div class="c-metric">
+              <b>连续 2 次</b>
+              <span>阶段任务达标，并结合出勤与作业状态</span>
+            </div>
+          </div>
+          <p class="c-small" style="margin-top: 16px;">
+            阅读难度不是唯一指标：语言等级、文本难度与考试成绩来自不同测量体系，
+            我们只把它们作为参考坐标，不写成机械等值。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 空间 -->
+  <section class="c-sec c-sec--line" id="space">
+    <div class="c-wrap">
+      <div class="c-line-head">
+        <h2 class="c-h2">空间 · 两万余册馆藏与白色书塔</h2>
+        <span class="c-mono c-small">2019 年落成 · 4 项国际设计荣誉</span>
+      </div>
+      <div class="c-gal" data-reveal>
+        <a class="c-media" href="space.html"><img src="assets/img/space-01.jpg" alt="慕识书院的阅读空间与书架" loading="lazy"></a>
+        <a class="c-media" href="space.html"><img src="assets/img/space-04.jpg" alt="小读者在书架前选书" loading="lazy"></a>
+        <a class="c-media" href="space.html"><img src="assets/img/space-09.jpg" alt="阅读桌与自然光" loading="lazy"></a>
+        <a class="c-media" href="space.html"><img src="assets/img/space-07.jpg" alt="原版图书陈列" loading="lazy"></a>
+        <a class="c-media" href="space.html"><img src="assets/img/space-12.jpg" alt="书架与阅读角" loading="lazy"></a>
+        <a class="c-media" href="space.html"><img src="assets/img/space-14.jpg" alt="阅读室" loading="lazy"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="c-sec c-sec--line" id="faq">
+    <div class="c-wrap" style="max-width: 900px;">
+      <div class="c-line-head">
+        <h2 class="c-h2">口径与边界</h2>
+        <span class="c-mono c-small">FAQ</span>
+      </div>
+      <details class="c-acc" open>
+        <summary>语言等级等于考试成绩吗？</summary>
+        <div>不等于。语言等级描述综合能力，考试还受题型熟悉度、时间管理与全技能表现影响。报名考试前应另做全技能评估。</div>
+      </details>
+      <details class="c-acc">
+        <summary>Lexile 越高越好吗？</summary>
+        <div>不是。它主要反映英文文本难度与读者理解能力，不能替代兴趣、背景知识、思辨与表达。合适的挑战才最有效。</div>
+      </details>
+      <details class="c-acc">
+        <summary>为什么 2–6 岁不强调标化考试？</summary>
+        <div>这一阶段优先建立声音—意义连接、共读兴趣、互动习惯与拼读准备。先让语言自然生长，再谈考试表现。</div>
+      </details>
+      <details class="c-acc">
+        <summary>9–12 岁每个阶段到底需要多久？</summary>
+        <div>目前按每周 2 次、合计 3–3.5 小时、每单元约 6 次课规划；若每阶 10 单元，约 30 教学周。最终以实际单元数、项目深度和达标速度为准。</div>
+      </details>
+      <details class="c-acc">
+        <summary>怎样知道孩子真的进步了？</summary>
+        <div>看四类证据：读得懂、说得清、写得出、换一篇也会用。建议保存前后两次录音、阅读回答与代表写作。</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="c-cta">
+    <div class="c-wrap c-cta__grid">
+      <div>
+        <p class="c-label">First Visit</p>
+        <h2 class="c-h2" style="margin-top: 12px;">先测出起点，再谈路径</h2>
+        <p class="c-lead" style="margin-top: 14px;">
+          一次到访约 60 分钟：导师面谈、陌生文本、口语与拼读观察、写作样本，
+          当天给出起点建议与一份阅读计划草案。
+        </p>
+      </div>
+      <div class="c-btnrow">
+        <a class="c-btn c-btn--gold" href="visit.html">预约阅读能力评估</a>
+        <a class="c-btn c-btn--ghost" href="tel:02585710168">025-85710168</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="c-foot">
+  <div class="c-wrap c-foot__grid">
+    <div>
+      <img src="assets/img/logo-light.png" alt="Mouseion 慕识书院" width="742" height="123">
+      <p class="c-small">慕识小社区，阅读大世界。自 2019 年起，专注儿童阅读文化服务的儿童友好图书馆与阅读工坊。</p>
+      <p class="c-small" style="margin-top: 12px;">
+        025-85710168 · 180 6168 1356<br>
+        南京市建邺区白龙江西街 62 号 仁恒江湾城同乐坊 2F
+      </p>
+    </div>
+    <div>
+      <p class="c-foot__t">课程与路径</p>
+      <div class="c-foot__list">
+        <a href="pathway.html">2–12 岁成长路径</a>
+        <a href="workshop.html">阅读工坊与课程</a>
+        <a href="assessment.html">阅读能力评估</a>
+        <a href="activities.html">假期营与活动</a>
+      </div>
+    </div>
+    <div>
+      <p class="c-foot__t">关于慕识</p>
+      <div class="c-foot__list">
+        <a href="about.html">品牌与理念</a>
+        <a href="space.html">空间与荣誉</a>
+        <a href="about.html#faculty">导师团队</a>
+        <a href="visit.html">首次到访预约</a>
+      </div>
+    </div>
+    <div>
+      <p class="c-foot__t">设计方案</p>
+      <div class="c-foot__list">
+        <a href="designs.html">五套方案总览</a>
+        <a href="design-a.html">方案 A · 书院金</a>
+        <a href="design-b.html">方案 B · 童趣乐园</a>
+        <a href="design-d.html">方案 D · 杂志画册</a>
+        <a href="design-e.html">方案 E · 专业体系</a>
+      </div>
+    </div>
+  </div>
+  <div class="c-wrap c-foot__bot">
+    <span>© <span data-year>2026</span> MOUSEION 慕识书院</span>
+    <span>设计方案 C · 数据可信</span>
+  </div>
+</footer>
+
+<div class="c-bottom">
+  <a class="c-btn c-btn--ghost" href="tel:02585710168">打电话</a>
+  <a class="c-btn c-btn--gold" href="visit.html">预约评估</a>
+</div>
+
+<span class="c-flag">方案 C · 数据可信</span>
+
+<script src="assets/js/designs.js" defer></script>
+</body>
+</html>
